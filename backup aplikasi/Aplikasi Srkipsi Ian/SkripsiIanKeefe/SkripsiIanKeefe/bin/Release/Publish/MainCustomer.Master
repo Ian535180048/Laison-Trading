@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainCustomer.master.cs" Inherits="SkripsiIanKeefe.MainCustomer" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Lasion</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets cust/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css cust/styles.css" rel="stylesheet" />
+</head>
+
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Laison</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item">
+                            <asp:LinkButton Text="Home" CssClass="nav-link active" ID="btnhome" OnClick="btnhome_Click1" runat="server" CausesValidation="false" />
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton Text="Transaksi Yang Sedang Berjalan" CssClass="nav-link" ID="btnprogress" OnClick="btnprogress_Click" runat="server" CausesValidation="false" />
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton Text="Riwayat Transaksi" CssClass="nav-link" ID="btnriwayat" OnClick="btnriwayat_Click" CausesValidation="false" runat="server" />
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Proses Transaksi</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <asp:LinkButton CssClass="nav-link" Text="Pembayaran" ID="lbpembayaran" OnClick="lbpembayaran_Click1" CausesValidation="false" runat="server" />
+                                </li>
+                                <li>
+                                    <asp:LinkButton CssClass="nav-link" Text="Penerimaan" ID="lbpenerimaan" OnClick="lbpenerimaan_Click1" CausesValidation="false" runat="server" />
+                                </li>
+                                <li>
+                                    <asp:LinkButton CssClass="nav-link" Text="Pengajuan Pembatalan Transaksi" ID="lbcancel" OnClick="lbcancel_Click" CausesValidation="false" runat="server" />
+                                </li>
+                                <li>
+                                    <asp:LinkButton CssClass="nav-link" Text="Pengajuan Pengembalian Produl" ID="lbrefund" OnClick="lbrefund_Click1" CausesValidation="false" runat="server" />
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <asp:Button Text="Cart" runat="server" CssClass="btn btn-outline-dark" Font-Size="Medium" CausesValidation="false" OnClick="lbcart_Click" />
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <li>
+                                    <asp:Label CssClass="nav-link" ID="lbluser" runat="server" ForeColor="Black" />
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                    <asp:LinkButton CssClass="nav-link" Text="Settings" ID="lbsettings" OnClick="lbsettings_Click1" CausesValidation="false" runat="server" ForeColor="Black" />
+                                </li>
+                                <li>
+                                    <asp:LinkButton CssClass="nav-link" Text="Logout" ID="lblogout" OnClick="lblogout_Click1" CausesValidation="false" runat="server" ForeColor="Black" />
+                                </li>
+                            </ul>
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="layoutSidenav_content">
+            <div class="container-fluid px-4">
+                <main>
+
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                        </asp:ContentPlaceHolder>
+                    </div>
+            </div>
+            </main>
+            <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Laison Trading 2022</p>
+                <br />
+                <p class="m-0 text-center text-white"> 081349326249</p>
+                <div class ="m-0 text-center text-white">
+                    <a href="https://www.instagram.com/laisontrading/">Instagram</a>
+                </div>
+                
+            </div>
+        </footer>
+                                <%--<footer class="py-4 bg-light mt-auto">
+                                    <div class="container-fluid px-4">
+                                        <div class="d-flex align-items-center justify-content-between small">
+                                            <div class="text-muted">Copyright &copy; Laison Trading 2021</div>
+                                            <div class="text-muted">081349326249</div>
+                                            <div>
+                                                <a href="https://www.instagram.com/laisontrading/">Instagram</a>
+                                                &middot;                               
+                                                <a href="#">Terms &amp; Conditions</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </footer>--%>
+        </div>
+    </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+</body>
+</html>

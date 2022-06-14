@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LAISONModelStoreContainer" CdmEntityContainer="LAISONEntities">
+    <EntitySetMapping Name="HALOes">
+      <EntityTypeMapping TypeName="LAISONModel.HALO">
+        <MappingFragment StoreEntitySet="HALO">
+          <ScalarProperty Name="TEST" ColumnName="TEST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIPs">
+      <EntityTypeMapping TypeName="LAISONModel.SIP">
+        <MappingFragment StoreEntitySet="SIP">
+          <ScalarProperty Name="TESTO" ColumnName="TESTO" />
+          <ScalarProperty Name="TEST" ColumnName="TEST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

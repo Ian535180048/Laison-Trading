@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LAISONModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LAISONEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="HALOes" EntityType="LAISONModel.HALO" />
+    <EntitySet Name="SIPs" EntityType="LAISONModel.SIP" />
+    <AssociationSet Name="FK__SIP__TEST__74AE54BC" Association="LAISONModel.FK__SIP__TEST__74AE54BC">
+      <End Role="HALO" EntitySet="HALOes" />
+      <End Role="SIP" EntitySet="SIPs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HALO">
+    <Key>
+      <PropertyRef Name="TEST" />
+    </Key>
+    <Property Name="TEST" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="SIPs" Relationship="LAISONModel.FK__SIP__TEST__74AE54BC" FromRole="HALO" ToRole="SIP" />
+  </EntityType>
+  <EntityType Name="SIP">
+    <Key>
+      <PropertyRef Name="TESTO" />
+    </Key>
+    <Property Name="TESTO" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TEST" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="HALO" Relationship="LAISONModel.FK__SIP__TEST__74AE54BC" FromRole="SIP" ToRole="HALO" />
+  </EntityType>
+  <Association Name="FK__SIP__TEST__74AE54BC">
+    <End Role="HALO" Type="LAISONModel.HALO" Multiplicity="1" />
+    <End Role="SIP" Type="LAISONModel.SIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HALO">
+        <PropertyRef Name="TEST" />
+      </Principal>
+      <Dependent Role="SIP">
+        <PropertyRef Name="TEST" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

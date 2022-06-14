@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LAISONModelStoreContainer" CdmEntityContainer="LAISONEntities">
+    <EntitySetMapping Name="CARTs">
+      <EntityTypeMapping TypeName="LAISONModel.CART">
+        <MappingFragment StoreEntitySet="CART">
+          <ScalarProperty Name="CART_ID" ColumnName="CART_ID" />
+          <ScalarProperty Name="REF_USER_ID" ColumnName="REF_USER_ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="AMMOUNT" ColumnName="AMMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHECKOUTs">
+      <EntityTypeMapping TypeName="LAISONModel.CHECKOUT">
+        <MappingFragment StoreEntitySet="CHECKOUT">
+          <ScalarProperty Name="CHECKOUT_ID" ColumnName="CHECKOUT_ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="TRANS_PENJUALAN_ID" ColumnName="TRANS_PENJUALAN_ID" />
+          <ScalarProperty Name="JUMLAH_BARANG" ColumnName="JUMLAH_BARANG" />
+          <ScalarProperty Name="HARGA_PRODUK" ColumnName="HARGA_PRODUK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTs">
+      <EntityTypeMapping TypeName="LAISONModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COAs">
+      <EntityTypeMapping TypeName="LAISONModel.COA">
+        <MappingFragment StoreEntitySet="COA">
+          <ScalarProperty Name="COA_ID" ColumnName="COA_ID" />
+          <ScalarProperty Name="COA_NO" ColumnName="COA_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JURNALs">
+      <EntityTypeMapping TypeName="LAISONModel.JURNAL">
+        <MappingFragment StoreEntitySet="JURNAL">
+          <ScalarProperty Name="JURNAL_ID" ColumnName="JURNAL_ID" />
+          <ScalarProperty Name="TRANS_PENJUALAN_ID" ColumnName="TRANS_PENJUALAN_ID" />
+          <ScalarProperty Name="TRANS_HUTANG_ID" ColumnName="TRANS_HUTANG_ID" />
+          <ScalarProperty Name="TRANS_BIAYA_ID" ColumnName="TRANS_BIAYA_ID" />
+          <ScalarProperty Name="TRANS_BYR_UTANG_ID" ColumnName="TRANS_BYR_UTANG_ID" />
+          <ScalarProperty Name="TRANS_STOCK_BARANG_ID" ColumnName="TRANS_STOCK_BARANG_ID" />
+          <ScalarProperty Name="COA_ID" ColumnName="COA_ID" />
+          <ScalarProperty Name="IN_AMT" ColumnName="IN_AMT" />
+          <ScalarProperty Name="OUT_AMT" ColumnName="OUT_AMT" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PEMBAYARANs">
+      <EntityTypeMapping TypeName="LAISONModel.PEMBAYARAN">
+        <MappingFragment StoreEntitySet="PEMBAYARAN">
+          <ScalarProperty Name="pembayaran_id" ColumnName="pembayaran_id" />
+          <ScalarProperty Name="CART_ID" ColumnName="CART_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLACEs">
+      <EntityTypeMapping TypeName="LAISONModel.PLACE">
+        <MappingFragment StoreEntitySet="PLACE">
+          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+          <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+          <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTs">
+      <EntityTypeMapping TypeName="LAISONModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="PROD_NO" ColumnName="PROD_NO" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="STOCK_TOTAL" ColumnName="STOCK_TOTAL" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+          <ScalarProperty Name="BERAT_PRODUK" ColumnName="BERAT_PRODUK" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REF_USER">
+      <EntityTypeMapping TypeName="LAISONModel.REF_USER">
+        <MappingFragment StoreEntitySet="REF_USER">
+          <ScalarProperty Name="REF_USER_ID" ColumnName="REF_USER_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+          <ScalarProperty Name="DTM_CRT" ColumnName="DTM_CRT" />
+          <ScalarProperty Name="DTM_UPD" ColumnName="DTM_UPD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUPPLIERs">
+      <EntityTypeMapping TypeName="LAISONModel.SUPPLIER">
+        <MappingFragment StoreEntitySet="SUPPLIER">
+          <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+          <ScalarProperty Name="SUPPLIER_NO" ColumnName="SUPPLIER_NO" />
+          <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="LAISONModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_BIAYA">
+      <EntityTypeMapping TypeName="LAISONModel.TRANS_BIAYA">
+        <MappingFragment StoreEntitySet="TRANS_BIAYA">
+          <ScalarProperty Name="TRANS_BIAYA_ID" ColumnName="TRANS_BIAYA_ID" />
+          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="AMT" ColumnName="AMT" />
+          <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_HUTANG">
+      <EntityTypeMapping TypeName="LAISONModel.TRANS_HUTANG">
+        <MappingFragment StoreEntitySet="TRANS_HUTANG">
+          <ScalarProperty Name="TRANS_HUTANG_ID" ColumnName="TRANS_HUTANG_ID" />
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+          <ScalarProperty Name="HUTANG_AMT" ColumnName="HUTANG_AMT" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+          <ScalarProperty Name="SISA" ColumnName="SISA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_PEMBAYARAN_HUTANG">
+      <EntityTypeMapping TypeName="LAISONModel.TRANS_PEMBAYARAN_HUTANG">
+        <MappingFragment StoreEntitySet="TRANS_PEMBAYARAN_HUTANG">
+          <ScalarProperty Name="TRANS_BYR_UTANG_ID" ColumnName="TRANS_BYR_UTANG_ID" />
+          <ScalarProperty Name="TRANS_HUTANG_ID" ColumnName="TRANS_HUTANG_ID" />
+          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_PENJUALAN">
+      <EntityTypeMapping TypeName="LAISONModel.TRANS_PENJUALAN">
+        <MappingFragment StoreEntitySet="TRANS_PENJUALAN">
+          <ScalarProperty Name="TRANS_PENJUALAN_ID" ColumnName="TRANS_PENJUALAN_ID" />
+          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="HARGA_ONGKIR" ColumnName="HARGA_ONGKIR" />
+          <ScalarProperty Name="REF_USER_ID" ColumnName="REF_USER_ID" />
+          <ScalarProperty Name="ALAMAT" ColumnName="ALAMAT" />
+          <ScalarProperty Name="NAMA_PENERIMA" ColumnName="NAMA_PENERIMA" />
+          <ScalarProperty Name="ONGKIR_NAMA" ColumnName="ONGKIR_NAMA" />
+          <ScalarProperty Name="ONGKIR_TYPE" ColumnName="ONGKIR_TYPE" />
+          <ScalarProperty Name="BUKTI_TRANSAKSI" ColumnName="BUKTI_TRANSAKSI" />
+          <ScalarProperty Name="TANGGAL_TERKIRIM" ColumnName="TANGGAL_TERKIRIM" />
+          <ScalarProperty Name="RESI_PENGIRIMAN" ColumnName="RESI_PENGIRIMAN" />
+          <ScalarProperty Name="TANGGAL_BAYAR" ColumnName="TANGGAL_BAYAR" />
+          <ScalarProperty Name="TANGGAL_TERIMA" ColumnName="TANGGAL_TERIMA" />
+          <ScalarProperty Name="PLACE_ID" ColumnName="PLACE_ID" />
+          <ScalarProperty Name="BUKTI_REFUND" ColumnName="BUKTI_REFUND" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+          <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANS_STOCK_BARANG">
+      <EntityTypeMapping TypeName="LAISONModel.TRANS_STOCK_BARANG">
+        <MappingFragment StoreEntitySet="TRANS_STOCK_BARANG">
+          <ScalarProperty Name="TRANS_STOCK_BARANG_ID" ColumnName="TRANS_STOCK_BARANG_ID" />
+          <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+          <ScalarProperty Name="STOCK_AMT" ColumnName="STOCK_AMT" />
+          <ScalarProperty Name="HARGA" ColumnName="HARGA" />
+          <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

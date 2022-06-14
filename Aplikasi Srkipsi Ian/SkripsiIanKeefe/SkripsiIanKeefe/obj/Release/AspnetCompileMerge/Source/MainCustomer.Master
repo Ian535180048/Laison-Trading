@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainCustomer.master.cs" Inherits="SkripsiIanKeefe.MainCustomer" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LAISON TRADING</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="sb-nav-fixed">
+
+    <form runat="server">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <asp:LinkButton CssClass="navbar-brand ps-3" Text="Laison Trading" ID="lblaisontrading" OnClick="lblaisontrading_Click" runat="server" CausesValidation="false" />
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <asp:Label CssClass="text-white" Text="081349326249" runat="server" />
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="nav-link">
+                                <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <asp:LinkButton CssClass="nav-link" Font-Size="Medium" ID="lbcart" Text="Cart" runat="server" CausesValidation="false" OnClick="lbcart_Click" />
+                            </div>
+                            <div class="nav-link">
+                                <div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                                <asp:LinkButton CssClass="nav-link" Font-Size="Medium" ID="lbtransaksionprogress" Text="Transaksi On Progress" runat="server" CausesValidation="false" OnClick="lbtransaksionprogress_Click" />
+                            </div>
+                            <div class="nav-link">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+                                <asp:LinkButton CssClass="nav-link" Font-Size="Medium" ID="lbtransaksi" Text="History Transaksi" runat="server" CausesValidation="false" OnClick="lbtransaksi_Click" />
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Menu Transaksi</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Approval
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <asp:LinkButton CssClass="nav-link" Text="Pembayaran" ID="lbpembayaran" runat="server" CausesValidation="false" OnClick="lbpembayaran_Click" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Penerimaan" ID="lbpenerimaan" runat="server" CausesValidation="false" OnClick="lbpenerimaan_Click" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Request Cancel Transaksi" ID="lbcanceltrans" runat="server" CausesValidation="false" OnClick="lbcanceltrans_Click" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Refund Transaksi" ID="lbrefund" runat="server" CausesValidation="false" OnClick="lbrefund_Click" />
+                                    <%--<a class="nav-link" href="PenjualanPaging.aspx">Penjualan</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Pembayaran Biaya</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Prive</a>--%>
+                                </nav>
+                            </div>
+                            <%--<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayout2" aria-expanded="false" aria-controls="collapseLayout2">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Data
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayout2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <asp:LinkButton CssClass="nav-link" Text="Jurnal" ID="lbjurnal" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Customer" ID="lbcustomer" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Product" ID="lbproduct" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Supplier" ID="lbsupplier" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Client" ID="lbclient" runat="server" CausesValidation="false" />
+                                </nav>
+                            </div>--%>
+                            <div class="sb-sidenav-menu-heading">Account</div>
+                            <%--<div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>--%>
+                            <asp:LinkButton CssClass="nav-link" ID="lbsettings" Text="Settings" runat="server" CausesValidation="false" OnClick="lbsettings_Click" />
+                            <asp:LinkButton CssClass="nav-link" ID="lblogout" Text="Logout" runat="server" CausesValidation="false" OnClick="lblogout_Click" />
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        <asp:Label ID="lblnameuser" runat="server" />
+                    </div>
+                </nav>
+            </div>
+
+            <div id="layoutSidenav_content">
+                <div class="container-fluid px-4">
+                    <main>
+
+                        <div>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                </div>
+                </main>
+                                <footer class="py-4 bg-light mt-auto">
+                                    <div class="container-fluid px-4">
+                                        <div class="d-flex align-items-center justify-content-between small">
+                                            <div class="text-muted">Copyright &copy; Laison Trading 2021</div>
+                                            <div class="text-muted">081349326249</div>
+                                            <div>
+                                                <a href="https://www.instagram.com/laisontrading/">Instagram</a>
+                                                &middot;                               
+                                                <a href="#">Terms &amp; Conditions</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </footer>
+            </div>
+    </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+</body>
+</html>

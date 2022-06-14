@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="SkripsiIanKeefe.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>LAISON TRADING</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <%--<a class="navbar-brand ps-3" id="navbarlaison" href="NaiveBayes.aspx/"> Laison Trading</a>--%>
+            <%--<div class="mr-auto">--%>
+            <asp:LinkButton CssClass="navbar-brand ps-3" Text="Laison Trading" ID="lblaisontrading" OnClick="lblaisontrading_Click" runat="server" CausesValidation="false" />
+            <%--<asp:LinkButton CssClass="justify-content-end text-white"  ID="lbnavbar" OnClick="lbnavbar_Click" Text="Laison Trading" runat="server"/>--%>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+
+            <%--<asp:Literal ID="ltlnameuser" runat="server" />--%>
+            <%-- </div>--%>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="nav-link">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <asp:LinkButton CssClass="nav-link" Font-Size="Medium" ID="lbprediksistokbarang" Text="Prediksi Stok Barang" OnClick="lbprediksistokbarang_Click" runat="server" CausesValidation="false" />
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Menu Transaksi</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Transaksi
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <asp:LinkButton CssClass="nav-link" Text="Transaksi Penjualan" ID="lbpenjualan" OnClick="lbpenjualan_Click" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Transaksi Biaya" ID="lbbiaya" OnClick="lbbiaya_Click" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Transaksi Hutang" ID="lbhutang" OnClick="lbhutang_Click" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Transaksi Stock Barang" ID="lbstok" OnClick="lbstok_Click" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Transaksi Pembayaran Hutang" ID="lbpembayaranhutang" OnClick="lbpembayaranhutang_Click" runat="server" CausesValidation="false" />
+                                    <%--<a class="nav-link" href="PenjualanPaging.aspx">Penjualan</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Pembayaran Biaya</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Prive</a>--%>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayout2" aria-expanded="false" aria-controls="collapseLayout2">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Data
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayout2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <asp:LinkButton CssClass="nav-link" Text="Jurnal" ID="lbjurnal" OnClick="lbjurnal_Click" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="List User" ID="lbcustomer" OnClick="lbcustomer_Click" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Produk" ID="lbproduct" OnClick="lbproduct_Click" runat="server" CausesValidation="false"/>
+                                    <asp:LinkButton CssClass="nav-link" Text="Pemasok" ID="lbsupplier" OnClick="lbsupplier_Click" runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Klien" ID="lbclient" OnClick="lbclient_Click" runat="server" CausesValidation="false" />
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayout3" aria-expanded="false" aria-controls="collapseLayout2">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Menu Proses Transaksi Penjualan
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayout3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <asp:LinkButton CssClass="nav-link" Text="Persetujuan Pembayaran" ID="lbapprovepembayaran" OnClick="lbapprovepembayaran_Click"  runat="server" CausesValidation="false" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Pengiriman" ID="lbpengiriman" runat="server" CausesValidation="false" OnClick="lbpengiriman_Click" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Pembatalan Transaksi" ID="lbcanceltransaksi"  runat="server" CausesValidation="false" OnClick="lbcanceltransaksi_Click"/>
+                                    <asp:LinkButton CssClass="nav-link" Text="Persetujuan Pembatalan Transaksi" ID="lbapprovecancel" runat="server" CausesValidation="false" OnClick="lbapprovecancel_Click" />
+                                    <asp:LinkButton CssClass="nav-link" Text="Persetujuan Pengembalian Barang" ID="lbapproverefund" runat="server" CausesValidation="false" OnClick="lbapproverefund_Click" />
+                                </nav>
+                            </div>
+                            <%--<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Data
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>--%>
+                            <div class="sb-sidenav-menu-heading">Account</div>
+                                <%--<div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>--%>
+                                <asp:LinkButton CssClass="nav-link" ID="lblogout" Text="Logout" OnClick="lblogout_Click" runat="server" CausesValidation="false" />
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        <asp:Label ID="lblnameuser" runat="server" />
+                    </div>
+                </nav>
+            </div>
+
+            <div id="layoutSidenav_content">
+                <div class="container-fluid px-4">
+                    <main>
+     
+    
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+                </div>
+                </main>
+            </div>
+    </form>
+    </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\Release\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AddBiaya.aspx">
+      <publishTime>01/19/2022 03:08:20</publishTime>
+    </File>
+    <File Include="AddClient.aspx">
+      <publishTime>12/26/2021 05:15:56</publishTime>
+    </File>
+    <File Include="AddHutang.aspx">
+      <publishTime>01/19/2022 03:15:21</publishTime>
+    </File>
+    <File Include="AddPembayaranHutang.aspx">
+      <publishTime>01/19/2022 03:23:50</publishTime>
+    </File>
+    <File Include="AddProduct.aspx">
+      <publishTime>01/19/2022 03:45:51</publishTime>
+    </File>
+    <File Include="AddStokBarang.aspx">
+      <publishTime>01/19/2022 03:20:58</publishTime>
+    </File>
+    <File Include="AddSupplier.aspx">
+      <publishTime>12/26/2021 05:15:55</publishTime>
+    </File>
+    <File Include="ApproveRefund.aspx">
+      <publishTime>01/11/2022 01:35:00</publishTime>
+    </File>
+    <File Include="assets cust/favicon.ico">
+      <publishTime>10/19/2021 05:58:05</publishTime>
+    </File>
+    <File Include="assets/demo/chart-area-demo.js">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="assets/demo/chart-bar-demo.js">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="assets/demo/chart-pie-demo.js">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="assets/demo/datatables-demo.js">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="assets/img/error-404-monochrome.svg">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="BiayaPagingAdmin.aspx">
+      <publishTime>01/11/2022 02:08:34</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/01/2021 00:09:40</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/13/2016 23:06:14</publishTime>
+    </File>
+    <File Include="bin/RestSharp.dll">
+      <publishTime>11/03/2021 22:27:53</publishTime>
+    </File>
+    <File Include="bin/SkripsiIanKeefe.dll">
+      <publishTime>01/19/2022 04:03:16</publishTime>
+    </File>
+    <File Include="bin/SkripsiIanKeefe.pdb">
+      <publishTime>01/19/2022 04:03:16</publishTime>
+    </File>
+    <File Include="BuktiApprovalPengiriman.aspx">
+      <publishTime>01/12/2022 00:26:59</publishTime>
+    </File>
+    <File Include="BuktiPembayaran.aspx">
+      <publishTime>01/12/2022 00:26:58</publishTime>
+    </File>
+    <File Include="Cart.aspx">
+      <publishTime>01/19/2022 03:35:23</publishTime>
+    </File>
+    <File Include="CheckoutPembayaran.aspx">
+      <publishTime>01/19/2022 03:44:32</publishTime>
+    </File>
+    <File Include="ClientPagingAdmin.aspx">
+      <publishTime>01/11/2022 01:50:28</publishTime>
+    </File>
+    <File Include="css cust/styles.css">
+      <publishTime>10/19/2021 05:58:05</publishTime>
+    </File>
+    <File Include="css/styles.css">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="CustomerPagingAdmin.aspx">
+      <publishTime>12/22/2021 22:12:22</publishTime>
+    </File>
+    <File Include="DetailBeban.aspx">
+      <publishTime>01/11/2022 01:34:59</publishTime>
+    </File>
+    <File Include="DetailHutang.aspx">
+      <publishTime>01/11/2022 01:34:59</publishTime>
+    </File>
+    <File Include="DetailPembayaranHutang.aspx">
+      <publishTime>01/12/2022 00:37:52</publishTime>
+    </File>
+    <File Include="DetailPembelianStok.aspx">
+      <publishTime>01/11/2022 01:34:59</publishTime>
+    </File>
+    <File Include="DetailPenjualanAdmin.aspx">
+      <publishTime>01/11/2022 01:52:37</publishTime>
+    </File>
+    <File Include="DetailPenjualanCust.aspx">
+      <publishTime>01/11/2022 01:35:00</publishTime>
+    </File>
+    <File Include="DetailProdCust.aspx">
+      <publishTime>12/26/2021 05:15:55</publishTime>
+    </File>
+    <File Include="DetailProduct.aspx">
+      <publishTime>12/25/2021 22:48:08</publishTime>
+    </File>
+    <File Include="EditBiaya.aspx">
+      <publishTime>01/19/2022 03:09:37</publishTime>
+    </File>
+    <File Include="EditClient.aspx">
+      <publishTime>12/26/2021 05:15:55</publishTime>
+    </File>
+    <File Include="EditHutang.aspx">
+      <publishTime>01/19/2022 03:15:21</publishTime>
+    </File>
+    <File Include="EditPembayaranHutang.aspx">
+      <publishTime>01/19/2022 03:24:59</publishTime>
+    </File>
+    <File Include="EditProduct.aspx">
+      <publishTime>01/19/2022 03:33:29</publishTime>
+    </File>
+    <File Include="EditStok.aspx">
+      <publishTime>01/19/2022 03:22:23</publishTime>
+    </File>
+    <File Include="EditSupplier.aspx">
+      <publishTime>12/26/2021 05:15:55</publishTime>
+    </File>
+    <File Include="Entities/LaisonEntities.edmx.diagram">
+      <publishTime>01/02/2022 04:49:37</publishTime>
+    </File>
+    <File Include="ForgotPassword.aspx">
+      <publishTime>11/26/2021 02:47:47</publishTime>
+    </File>
+    <File Include="HistoryTransaksi.aspx">
+      <publishTime>01/12/2022 00:26:59</publishTime>
+    </File>
+    <File Include="HomeCustomer.aspx">
+      <publishTime>01/19/2022 03:37:42</publishTime>
+    </File>
+    <File Include="HutangPagingAdmin.aspx">
+      <publishTime>01/11/2022 02:08:32</publishTime>
+    </File>
+    <File Include="Image/edit.png">
+      <publishTime>10/23/2021 03:55:43</publishTime>
+    </File>
+    <File Include="Image/notification.png">
+      <publishTime>12/24/2021 02:08:40</publishTime>
+    </File>
+    <File Include="Image/Pembayaran.png">
+      <publishTime>10/25/2021 01:53:49</publishTime>
+    </File>
+    <File Include="Image/trash.png">
+      <publishTime>10/24/2021 11:45:22</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>10/28/2021 01:24:04</publishTime>
+    </File>
+    <File Include="indexcust.html">
+      <publishTime>12/31/2021 23:22:00</publishTime>
+    </File>
+    <File Include="js cust/scripts.js">
+      <publishTime>10/19/2021 05:58:05</publishTime>
+    </File>
+    <File Include="js/datatables-simple-demo.js">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="js/scripts.js">
+      <publishTime>08/06/2021 03:03:43</publishTime>
+    </File>
+    <File Include="JurnalPaging.aspx">
+      <publishTime>01/11/2022 02:08:32</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>12/20/2021 02:52:57</publishTime>
+    </File>
+    <File Include="Main.aspx">
+      <publishTime>12/02/2021 02:20:35</publishTime>
+    </File>
+    <File Include="Main.Master">
+      <publishTime>01/12/2022 01:29:58</publishTime>
+    </File>
+    <File Include="MainCustomer.Master">
+      <publishTime>01/12/2022 01:29:58</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/16/2021 00:44:22</publishTime>
+    </File>
+    <File Include="PagingApproveCancelTransaksi.aspx">
+      <publishTime>01/11/2022 02:08:34</publishTime>
+    </File>
+    <File Include="PagingApprovePembayaranAdmin.aspx">
+      <publishTime>01/11/2022 02:08:34</publishTime>
+    </File>
+    <File Include="PagingApproveRefundTransaksi.aspx">
+      <publishTime>01/11/2022 02:08:34</publishTime>
+    </File>
+    <File Include="PagingCancelTransaksi.aspx">
+      <publishTime>01/11/2022 02:08:33</publishTime>
+    </File>
+    <File Include="PagingPembayaranProduk.aspx">
+      <publishTime>01/11/2022 02:08:33</publishTime>
+    </File>
+    <File Include="PagingPenerimaanProduk.aspx">
+      <publishTime>01/11/2022 02:08:33</publishTime>
+    </File>
+    <File Include="PagingPengirimanAdmin.aspx">
+      <publishTime>01/11/2022 02:08:33</publishTime>
+    </File>
+    <File Include="PagingReqCancelTransaksiCustomer.aspx">
+      <publishTime>11/22/2021 00:55:17</publishTime>
+    </File>
+    <File Include="PagingRequestCancelTransaksi.aspx">
+      <publishTime>01/11/2022 02:08:33</publishTime>
+    </File>
+    <File Include="PembayaranHutangPagingAdmin.aspx">
+      <publishTime>01/11/2022 02:08:33</publishTime>
+    </File>
+    <File Include="PembelianStockBarangPagingAdmin.aspx">
+      <publishTime>01/11/2022 02:08:33</publishTime>
+    </File>
+    <File Include="PenjualanOnProgressAdmin.aspx">
+      <publishTime>01/11/2022 02:08:32</publishTime>
+    </File>
+    <File Include="PenjualanPagingAdmin.aspx">
+      <publishTime>01/11/2022 02:08:34</publishTime>
+    </File>
+    <File Include="PrediksiStokBarang.aspx">
+      <publishTime>01/19/2022 04:01:50</publishTime>
+    </File>
+    <File Include="ProductPagingAdmin.aspx">
+      <publishTime>12/25/2021 17:19:09</publishTime>
+    </File>
+    <File Include="RefundCustomer.aspx">
+      <publishTime>01/11/2022 02:08:32</publishTime>
+    </File>
+    <File Include="RefundUploadBukti.aspx">
+      <publishTime>01/19/2022 03:45:51</publishTime>
+    </File>
+    <File Include="Register.aspx">
+      <publishTime>12/07/2021 02:32:19</publishTime>
+    </File>
+    <File Include="ResetPassword.aspx">
+      <publishTime>11/26/2021 02:57:16</publishTime>
+    </File>
+    <File Include="SettingCust.aspx">
+      <publishTime>01/11/2022 01:50:28</publishTime>
+    </File>
+    <File Include="SuccessPembayaran.aspx">
+      <publishTime>11/09/2021 00:01:36</publishTime>
+    </File>
+    <File Include="SupplierPagingAdmin.aspx">
+      <publishTime>01/11/2022 01:50:28</publishTime>
+    </File>
+    <File Include="Upload/14d0b8470e3348edbdbce664fe1a2652.jpg">
+      <publishTime>10/31/2021 00:48:47</publishTime>
+    </File>
+    <File Include="Upload/17-11-2021 10-47-22.png">
+      <publishTime>11/26/2021 03:23:51</publishTime>
+    </File>
+    <File Include="Upload/20211107_230251.jpg">
+      <publishTime>11/11/2021 12:48:28</publishTime>
+    </File>
+    <File Include="Upload/23014c772aff80d65c1deb7359995acf.jpg">
+      <publishTime>10/31/2021 00:58:33</publishTime>
+    </File>
+    <File Include="Upload/2af256420e5488eb95fe206533bd9ff1.jpg">
+      <publishTime>10/31/2021 00:55:49</publishTime>
+    </File>
+    <File Include="Upload/7231af93-b6dd-414b-ad23-5196200c3d12.jpg">
+      <publishTime>10/25/2021 21:48:43</publishTime>
+    </File>
+    <File Include="Upload/8cb0c30408cf1528e576358ffc7c1942.jpg">
+      <publishTime>10/31/2021 00:46:24</publishTime>
+    </File>
+    <File Include="Upload/8e6abc80848e07218f3ac9d39010d757.jpg">
+      <publishTime>10/31/2021 00:53:51</publishTime>
+    </File>
+    <File Include="Upload/9779617_34c9844d-885d-47fe-adcf-a5f868cc3df6_700_700.jpg">
+      <publishTime>10/31/2021 00:52:49</publishTime>
+    </File>
+    <File Include="Upload/currency+dollar+money+icon-1320195548001449382_512.png">
+      <publishTime>11/21/2021 03:46:44</publishTime>
+    </File>
+    <File Include="Upload/e2269084b018b1822fbfdb48765de845.jpg">
+      <publishTime>10/31/2021 00:54:49</publishTime>
+    </File>
+    <File Include="Upload/efe5f5f6e93ee137055ad7abef78b728.jpg">
+      <publishTime>10/31/2021 00:50:58</publishTime>
+    </File>
+    <File Include="Upload/Halaman Reschedule .png">
+      <publishTime>11/23/2021 22:51:09</publishTime>
+    </File>
+    <File Include="Upload/messageImage_1634277265785.jpeg">
+      <publishTime>10/24/2021 04:23:21</publishTime>
+    </File>
+    <File Include="Upload/MicrosoftTeams-image %2832%29.png">
+      <publishTime>11/21/2021 03:38:23</publishTime>
+    </File>
+    <File Include="Upload/MicrosoftTeams-image %2833%29.png">
+      <publishTime>11/26/2021 03:22:38</publishTime>
+    </File>
+    <File Include="Upload/tanda tangan.jpg">
+      <publishTime>11/30/2021 12:38:25</publishTime>
+    </File>
+    <File Include="Upload/waterfall-ian.jpg">
+      <publishTime>10/24/2021 04:22:22</publishTime>
+    </File>
+    <File Include="Upload/WhatsApp Image 2021-11-17 at 16.41.59.jpeg">
+      <publishTime>11/27/2021 03:53:15</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/11/2022 02:11:00</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

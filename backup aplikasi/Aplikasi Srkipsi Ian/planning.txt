@@ -1,0 +1,80 @@
+----PAGE ADMIN---
+
+planning 20-10-2021:
+hari ini semua transaksi searchnya kelar (KELAR)
+
+planning 21-10-2021:
+hari ini semua data product, client, supplier searchnya kelar dan sudah bisa logout (KELAR)
+
+planning 22-10-2021:
+fitur add item dan pasang ke semua transaksi (KELAR)
+
+planning 23-10-2021:
+fitur add item data (ADD PRODUCT KELAR, ADD SUPPLIER KELAR AMA ADD CLIENT KELAR)
+
+List yang bisa diedit :
+1. Transaksi Biaya bisa diedit dan kecuali nomor dan bisa di delete
+2. Transaksi Hutang gak bisa diedit dan delete kalau sudah lunas ato gak sudah ada data pembayaran hutang
+3. Transaksi pembayaran stok barang bisa ganti barang, ganti stok amt nya ama bisa di delete
+4. Transaksi pembayaran hutang bisa diedit dan kecuali nomor dan bisa di delete
+5. Data produk gak bisa di delete klo udh ada yang prnah beli ama bisa diedit harga ama stok nya mau berapa banyak dan bisa ganti foto
+6. Data supplier ama client bisa diedit dan tidak bisa delete klo udh prnah ada transaksi ama ni orang.
+
+
+planning 24-10-2021:
+fitur delete dan edit data transaksi dan data lainnya (kelar semua)
+
+planning 25-10-2021:
+fitur cek transaksi dan search jurnal kelar (search jurnal kelar)
+
+----PAGE ADMIN---
+
+---E-COMMERCE---
+
+planning 26-10-2021
+front end e-commerce kelar (kelar semua)
+
+planning 28-10-2021
+home page product e-commerce (kelar semua)
+
+planning 30-10-2021
+page cart (kelar semua)
+
+planning 7-11-2021
+page bayar (kelar)
+
+planning 13-11-2021
+page approval (kelar)
+
+planning 14-11-2021
+isi data penjualan
+
+planning 15-11-2021
+least square (kelar)
+
+planning 15-11-2021
+eoq (kelar)
+
+planning 16-11-2021
+double exponential smoothing (kelar)
+
+planning 20-11-2021 (kelar)
+semua metode kelar
+
+//planning 13-11-2021
+//isi data
+
+planning 22-11-2021 
+cancel transaksi (kelar)
+
+planning 23-11-2021 
+detail transaksi (kelar)
+
+planning 24-11-2021 
+detail transaksi (kelar)
+
+DONE
+
+
+---E-COMMERCE---
+target tanggal 24 kelar semua

@@ -1,0 +1,1187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LAISONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CART">
+          <Key>
+            <PropertyRef Name="CART_ID" />
+          </Key>
+          <Property Name="CART_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="REF_USER_ID" Type="bigint" Nullable="false" />
+          <Property Name="PROD_ID" Type="bigint" Nullable="false" />
+          <Property Name="AMMOUNT" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHECKOUT">
+          <Key>
+            <PropertyRef Name="CHECKOUT_ID" />
+          </Key>
+          <Property Name="CHECKOUT_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROD_ID" Type="bigint" />
+          <Property Name="TRANS_PENJUALAN_ID" Type="bigint" />
+          <Property Name="JUMLAH_BARANG" Type="int" />
+          <Property Name="HARGA_PRODUK" Type="decimal" Precision="11" Scale="2" />
+        </EntityType>
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLIENT_NO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COA">
+          <Key>
+            <PropertyRef Name="COA_ID" />
+          </Key>
+          <Property Name="COA_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COA_NO" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JURNAL">
+          <Key>
+            <PropertyRef Name="JURNAL_ID" />
+          </Key>
+          <Property Name="JURNAL_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRANS_PENJUALAN_ID" Type="bigint" />
+          <Property Name="TRANS_HUTANG_ID" Type="bigint" />
+          <Property Name="TRANS_BIAYA_ID" Type="bigint" />
+          <Property Name="TRANS_BYR_UTANG_ID" Type="bigint" />
+          <Property Name="TRANS_STOCK_BARANG_ID" Type="bigint" />
+          <Property Name="COA_ID" Type="bigint" />
+          <Property Name="IN_AMT" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="OUT_AMT" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="DESCR" Type="varchar" MaxLength="255" />
+          <Property Name="TANGGAL" Type="date" />
+        </EntityType>
+        <EntityType Name="PEMBAYARAN">
+          <Key>
+            <PropertyRef Name="pembayaran_id" />
+          </Key>
+          <Property Name="pembayaran_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CART_ID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PLACE">
+          <Key>
+            <PropertyRef Name="CITY_ID" />
+          </Key>
+          <Property Name="CITY_ID" Type="int" Nullable="false" />
+          <Property Name="PROVINCE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TYPE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CITY_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="POSTAL_CODE" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCT">
+          <Key>
+            <PropertyRef Name="PROD_ID" />
+          </Key>
+          <Property Name="PROD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROD_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PROD_NO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PRICE" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="STOCK_TOTAL" Type="int" Nullable="false" />
+          <Property Name="FOTO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="BERAT_PRODUK" Type="int" />
+          <Property Name="IS_ACTIVE" Type="varchar" MaxLength="255" />
+          <Property Name="DESCR" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="REF_USER">
+          <Key>
+            <PropertyRef Name="REF_USER_ID" />
+          </Key>
+          <Property Name="REF_USER_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LAST_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="PHONE_NUMBER" Type="varchar" MaxLength="255" />
+          <Property Name="ROLE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DTM_CRT" Type="datetime" Nullable="false" />
+          <Property Name="DTM_UPD" Type="datetime" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPPLIER_ID" />
+          </Key>
+          <Property Name="SUPPLIER_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUPPLIER_NO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SUPPLIER_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TRANS_BIAYA">
+          <Key>
+            <PropertyRef Name="TRANS_BIAYA_ID" />
+          </Key>
+          <Property Name="TRANS_BIAYA_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRANS_NO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DESCR" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AMT" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANS_HUTANG">
+          <Key>
+            <PropertyRef Name="TRANS_HUTANG_ID" />
+          </Key>
+          <Property Name="TRANS_HUTANG_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="bigint" />
+          <Property Name="TRANS_NO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="HUTANG_AMT" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="IS_ACTIVE" Type="varchar" MaxLength="255" />
+          <Property Name="TANGGAL" Type="date" Nullable="false" />
+          <Property Name="SISA" Type="decimal" Precision="11" Scale="2" />
+        </EntityType>
+        <EntityType Name="TRANS_PEMBAYARAN_HUTANG">
+          <Key>
+            <PropertyRef Name="TRANS_BYR_UTANG_ID" />
+          </Key>
+          <Property Name="TRANS_BYR_UTANG_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRANS_HUTANG_ID" Type="bigint" />
+          <Property Name="TRANS_NO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TOTAL" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANS_PENJUALAN">
+          <Key>
+            <PropertyRef Name="TRANS_PENJUALAN_ID" />
+          </Key>
+          <Property Name="TRANS_PENJUALAN_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRANS_NO" Type="varchar" MaxLength="255" />
+          <Property Name="TOTAL" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="date" />
+          <Property Name="STATUS" Type="varchar" MaxLength="255" />
+          <Property Name="HARGA_ONGKIR" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="REF_USER_ID" Type="bigint" />
+          <Property Name="ALAMAT" Type="varchar" MaxLength="255" />
+          <Property Name="NAMA_PENERIMA" Type="varchar" MaxLength="255" />
+          <Property Name="ONGKIR_NAMA" Type="varchar" MaxLength="255" />
+          <Property Name="ONGKIR_TYPE" Type="varchar" MaxLength="255" />
+          <Property Name="BUKTI_TRANSAKSI" Type="varchar" MaxLength="255" />
+          <Property Name="TANGGAL_TERKIRIM" Type="date" />
+          <Property Name="RESI_PENGIRIMAN" Type="varchar" MaxLength="255" />
+          <Property Name="TANGGAL_BAYAR" Type="date" />
+          <Property Name="TANGGAL_TERIMA" Type="date" />
+          <Property Name="PLACE_ID" Type="int" />
+          <Property Name="BUKTI_REFUND" Type="varchar" MaxLength="255" />
+          <Property Name="NOTES" Type="varchar" MaxLength="255" />
+          <Property Name="PHONE_NUMBER" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TRANS_STOCK_BARANG">
+          <Key>
+            <PropertyRef Name="TRANS_STOCK_BARANG_ID" />
+          </Key>
+          <Property Name="TRANS_STOCK_BARANG_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRANS_NO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PROD_ID" Type="bigint" />
+          <Property Name="SUPPLIER_ID" Type="bigint" />
+          <Property Name="STOCK_AMT" Type="int" Nullable="false" />
+          <Property Name="HARGA" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CART__PROD_ID__5BAD9CC8">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+          <End Role="CART" Type="Self.CART" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PROD_ID" />
+            </Principal>
+            <Dependent Role="CART">
+              <PropertyRef Name="PROD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CART__REF_USER_I__5CA1C101">
+          <End Role="REF_USER" Type="Self.REF_USER" Multiplicity="1" />
+          <End Role="CART" Type="Self.CART" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REF_USER">
+              <PropertyRef Name="REF_USER_ID" />
+            </Principal>
+            <Dependent Role="CART">
+              <PropertyRef Name="REF_USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHECKOUT__PROD_I__2EA5EC27">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="0..1" />
+          <End Role="CHECKOUT" Type="Self.CHECKOUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PROD_ID" />
+            </Principal>
+            <Dependent Role="CHECKOUT">
+              <PropertyRef Name="PROD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHECKOUT__TRANS___2F9A1060">
+          <End Role="TRANS_PENJUALAN" Type="Self.TRANS_PENJUALAN" Multiplicity="0..1" />
+          <End Role="CHECKOUT" Type="Self.CHECKOUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_PENJUALAN">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Principal>
+            <Dependent Role="CHECKOUT">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__COA_ID__76619304">
+          <End Role="COA" Type="Self.COA" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COA">
+              <PropertyRef Name="COA_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="COA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_BI__73852659">
+          <End Role="TRANS_BIAYA" Type="Self.TRANS_BIAYA" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_BIAYA">
+              <PropertyRef Name="TRANS_BIAYA_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_BIAYA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_BY__74794A92">
+          <End Role="TRANS_PEMBAYARAN_HUTANG" Type="Self.TRANS_PEMBAYARAN_HUTANG" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_PEMBAYARAN_HUTANG">
+              <PropertyRef Name="TRANS_BYR_UTANG_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_BYR_UTANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_HU__72910220">
+          <End Role="TRANS_HUTANG" Type="Self.TRANS_HUTANG" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_HUTANG">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_PE__719CDDE7">
+          <End Role="TRANS_PENJUALAN" Type="Self.TRANS_PENJUALAN" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_PENJUALAN">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_ST__756D6ECB">
+          <End Role="TRANS_STOCK_BARANG" Type="Self.TRANS_STOCK_BARANG" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_STOCK_BARANG">
+              <PropertyRef Name="TRANS_STOCK_BARANG_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_STOCK_BARANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PEMBAYARA__CART___0880433F">
+          <End Role="CART" Type="Self.CART" Multiplicity="1" />
+          <End Role="PEMBAYARAN" Type="Self.PEMBAYARAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CART">
+              <PropertyRef Name="CART_ID" />
+            </Principal>
+            <Dependent Role="PEMBAYARAN">
+              <PropertyRef Name="CART_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_HUT__CLIEN__2CF2ADDF">
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="0..1" />
+          <End Role="TRANS_HUTANG" Type="Self.TRANS_HUTANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENT">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="TRANS_HUTANG">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_PEM__TRANS__2FCF1A8A">
+          <End Role="TRANS_HUTANG" Type="Self.TRANS_HUTANG" Multiplicity="0..1" />
+          <End Role="TRANS_PEMBAYARAN_HUTANG" Type="Self.TRANS_PEMBAYARAN_HUTANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_HUTANG">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Principal>
+            <Dependent Role="TRANS_PEMBAYARAN_HUTANG">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_PEN__REF_U__681373AD">
+          <End Role="REF_USER" Type="Self.REF_USER" Multiplicity="0..1" />
+          <End Role="TRANS_PENJUALAN" Type="Self.TRANS_PENJUALAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REF_USER">
+              <PropertyRef Name="REF_USER_ID" />
+            </Principal>
+            <Dependent Role="TRANS_PENJUALAN">
+              <PropertyRef Name="REF_USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_STO__PROD___2645B050">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="0..1" />
+          <End Role="TRANS_STOCK_BARANG" Type="Self.TRANS_STOCK_BARANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PROD_ID" />
+            </Principal>
+            <Dependent Role="TRANS_STOCK_BARANG">
+              <PropertyRef Name="PROD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_STO__SUPPL__2739D489">
+          <End Role="SUPPLIER" Type="Self.SUPPLIER" Multiplicity="0..1" />
+          <End Role="TRANS_STOCK_BARANG" Type="Self.TRANS_STOCK_BARANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIER">
+              <PropertyRef Name="SUPPLIER_ID" />
+            </Principal>
+            <Dependent Role="TRANS_STOCK_BARANG">
+              <PropertyRef Name="SUPPLIER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LAISONModelStoreContainer">
+          <EntitySet Name="CART" EntityType="Self.CART" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHECKOUT" EntityType="Self.CHECKOUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COA" EntityType="Self.COA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JURNAL" EntityType="Self.JURNAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PEMBAYARAN" EntityType="Self.PEMBAYARAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PLACE" EntityType="Self.PLACE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REF_USER" EntityType="Self.REF_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUPPLIER" EntityType="Self.SUPPLIER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANS_BIAYA" EntityType="Self.TRANS_BIAYA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANS_HUTANG" EntityType="Self.TRANS_HUTANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANS_PEMBAYARAN_HUTANG" EntityType="Self.TRANS_PEMBAYARAN_HUTANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANS_PENJUALAN" EntityType="Self.TRANS_PENJUALAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANS_STOCK_BARANG" EntityType="Self.TRANS_STOCK_BARANG" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CART__PROD_ID__5BAD9CC8" Association="Self.FK__CART__PROD_ID__5BAD9CC8">
+            <End Role="PRODUCT" EntitySet="PRODUCT" />
+            <End Role="CART" EntitySet="CART" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CART__REF_USER_I__5CA1C101" Association="Self.FK__CART__REF_USER_I__5CA1C101">
+            <End Role="REF_USER" EntitySet="REF_USER" />
+            <End Role="CART" EntitySet="CART" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHECKOUT__PROD_I__2EA5EC27" Association="Self.FK__CHECKOUT__PROD_I__2EA5EC27">
+            <End Role="PRODUCT" EntitySet="PRODUCT" />
+            <End Role="CHECKOUT" EntitySet="CHECKOUT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHECKOUT__TRANS___2F9A1060" Association="Self.FK__CHECKOUT__TRANS___2F9A1060">
+            <End Role="TRANS_PENJUALAN" EntitySet="TRANS_PENJUALAN" />
+            <End Role="CHECKOUT" EntitySet="CHECKOUT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__COA_ID__76619304" Association="Self.FK__JURNAL__COA_ID__76619304">
+            <End Role="COA" EntitySet="COA" />
+            <End Role="JURNAL" EntitySet="JURNAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_BI__73852659" Association="Self.FK__JURNAL__TRANS_BI__73852659">
+            <End Role="TRANS_BIAYA" EntitySet="TRANS_BIAYA" />
+            <End Role="JURNAL" EntitySet="JURNAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_BY__74794A92" Association="Self.FK__JURNAL__TRANS_BY__74794A92">
+            <End Role="TRANS_PEMBAYARAN_HUTANG" EntitySet="TRANS_PEMBAYARAN_HUTANG" />
+            <End Role="JURNAL" EntitySet="JURNAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_HU__72910220" Association="Self.FK__JURNAL__TRANS_HU__72910220">
+            <End Role="TRANS_HUTANG" EntitySet="TRANS_HUTANG" />
+            <End Role="JURNAL" EntitySet="JURNAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_PE__719CDDE7" Association="Self.FK__JURNAL__TRANS_PE__719CDDE7">
+            <End Role="TRANS_PENJUALAN" EntitySet="TRANS_PENJUALAN" />
+            <End Role="JURNAL" EntitySet="JURNAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_ST__756D6ECB" Association="Self.FK__JURNAL__TRANS_ST__756D6ECB">
+            <End Role="TRANS_STOCK_BARANG" EntitySet="TRANS_STOCK_BARANG" />
+            <End Role="JURNAL" EntitySet="JURNAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PEMBAYARA__CART___0880433F" Association="Self.FK__PEMBAYARA__CART___0880433F">
+            <End Role="CART" EntitySet="CART" />
+            <End Role="PEMBAYARAN" EntitySet="PEMBAYARAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_HUT__CLIEN__2CF2ADDF" Association="Self.FK__TRANS_HUT__CLIEN__2CF2ADDF">
+            <End Role="CLIENT" EntitySet="CLIENT" />
+            <End Role="TRANS_HUTANG" EntitySet="TRANS_HUTANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_PEM__TRANS__2FCF1A8A" Association="Self.FK__TRANS_PEM__TRANS__2FCF1A8A">
+            <End Role="TRANS_HUTANG" EntitySet="TRANS_HUTANG" />
+            <End Role="TRANS_PEMBAYARAN_HUTANG" EntitySet="TRANS_PEMBAYARAN_HUTANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_PEN__REF_U__681373AD" Association="Self.FK__TRANS_PEN__REF_U__681373AD">
+            <End Role="REF_USER" EntitySet="REF_USER" />
+            <End Role="TRANS_PENJUALAN" EntitySet="TRANS_PENJUALAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_STO__PROD___2645B050" Association="Self.FK__TRANS_STO__PROD___2645B050">
+            <End Role="PRODUCT" EntitySet="PRODUCT" />
+            <End Role="TRANS_STOCK_BARANG" EntitySet="TRANS_STOCK_BARANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_STO__SUPPL__2739D489" Association="Self.FK__TRANS_STO__SUPPL__2739D489">
+            <End Role="SUPPLIER" EntitySet="SUPPLIER" />
+            <End Role="TRANS_STOCK_BARANG" EntitySet="TRANS_STOCK_BARANG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LAISONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CART">
+          <Key>
+            <PropertyRef Name="CART_ID" />
+          </Key>
+          <Property Name="CART_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REF_USER_ID" Type="Int64" Nullable="false" />
+          <Property Name="PROD_ID" Type="Int64" Nullable="false" />
+          <Property Name="AMMOUNT" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PRODUCT" Relationship="Self.FK__CART__PROD_ID__5BAD9CC8" FromRole="CART" ToRole="PRODUCT" />
+          <NavigationProperty Name="REF_USER" Relationship="Self.FK__CART__REF_USER_I__5CA1C101" FromRole="CART" ToRole="REF_USER" />
+          <NavigationProperty Name="PEMBAYARANs" Relationship="Self.FK__PEMBAYARA__CART___0880433F" FromRole="CART" ToRole="PEMBAYARAN" />
+        </EntityType>
+        <EntityType Name="CHECKOUT">
+          <Key>
+            <PropertyRef Name="CHECKOUT_ID" />
+          </Key>
+          <Property Name="CHECKOUT_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROD_ID" Type="Int64" />
+          <Property Name="TRANS_PENJUALAN_ID" Type="Int64" />
+          <Property Name="JUMLAH_BARANG" Type="Int32" />
+          <Property Name="HARGA_PRODUK" Type="Decimal" Precision="11" Scale="2" />
+          <NavigationProperty Name="PRODUCT" Relationship="Self.FK__CHECKOUT__PROD_I__2EA5EC27" FromRole="CHECKOUT" ToRole="PRODUCT" />
+          <NavigationProperty Name="TRANS_PENJUALAN" Relationship="Self.FK__CHECKOUT__TRANS___2F9A1060" FromRole="CHECKOUT" ToRole="TRANS_PENJUALAN" />
+        </EntityType>
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLIENT_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLIENT_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TRANS_HUTANG" Relationship="Self.FK__TRANS_HUT__CLIEN__2CF2ADDF" FromRole="CLIENT" ToRole="TRANS_HUTANG" />
+        </EntityType>
+        <EntityType Name="COA">
+          <Key>
+            <PropertyRef Name="COA_ID" />
+          </Key>
+          <Property Name="COA_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COA_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="JURNALs" Relationship="Self.FK__JURNAL__COA_ID__76619304" FromRole="COA" ToRole="JURNAL" />
+        </EntityType>
+        <EntityType Name="JURNAL">
+          <Key>
+            <PropertyRef Name="JURNAL_ID" />
+          </Key>
+          <Property Name="JURNAL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRANS_PENJUALAN_ID" Type="Int64" />
+          <Property Name="TRANS_HUTANG_ID" Type="Int64" />
+          <Property Name="TRANS_BIAYA_ID" Type="Int64" />
+          <Property Name="TRANS_BYR_UTANG_ID" Type="Int64" />
+          <Property Name="TRANS_STOCK_BARANG_ID" Type="Int64" />
+          <Property Name="COA_ID" Type="Int64" />
+          <Property Name="IN_AMT" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="OUT_AMT" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="DESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TANGGAL" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="COA" Relationship="Self.FK__JURNAL__COA_ID__76619304" FromRole="JURNAL" ToRole="COA" />
+          <NavigationProperty Name="TRANS_BIAYA" Relationship="Self.FK__JURNAL__TRANS_BI__73852659" FromRole="JURNAL" ToRole="TRANS_BIAYA" />
+          <NavigationProperty Name="TRANS_PEMBAYARAN_HUTANG" Relationship="Self.FK__JURNAL__TRANS_BY__74794A92" FromRole="JURNAL" ToRole="TRANS_PEMBAYARAN_HUTANG" />
+          <NavigationProperty Name="TRANS_HUTANG" Relationship="Self.FK__JURNAL__TRANS_HU__72910220" FromRole="JURNAL" ToRole="TRANS_HUTANG" />
+          <NavigationProperty Name="TRANS_PENJUALAN" Relationship="Self.FK__JURNAL__TRANS_PE__719CDDE7" FromRole="JURNAL" ToRole="TRANS_PENJUALAN" />
+          <NavigationProperty Name="TRANS_STOCK_BARANG" Relationship="Self.FK__JURNAL__TRANS_ST__756D6ECB" FromRole="JURNAL" ToRole="TRANS_STOCK_BARANG" />
+        </EntityType>
+        <EntityType Name="PEMBAYARAN">
+          <Key>
+            <PropertyRef Name="pembayaran_id" />
+          </Key>
+          <Property Name="pembayaran_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CART_ID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="CART" Relationship="Self.FK__PEMBAYARA__CART___0880433F" FromRole="PEMBAYARAN" ToRole="CART" />
+        </EntityType>
+        <EntityType Name="PLACE">
+          <Key>
+            <PropertyRef Name="CITY_ID" />
+          </Key>
+          <Property Name="CITY_ID" Type="Int32" Nullable="false" />
+          <Property Name="PROVINCE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CITY_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="POSTAL_CODE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCT">
+          <Key>
+            <PropertyRef Name="PROD_ID" />
+          </Key>
+          <Property Name="PROD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROD_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROD_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRICE" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="STOCK_TOTAL" Type="Int32" Nullable="false" />
+          <Property Name="FOTO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BERAT_PRODUK" Type="Int32" />
+          <Property Name="IS_ACTIVE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DESCR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CARTs" Relationship="Self.FK__CART__PROD_ID__5BAD9CC8" FromRole="PRODUCT" ToRole="CART" />
+          <NavigationProperty Name="CHECKOUTs" Relationship="Self.FK__CHECKOUT__PROD_I__2EA5EC27" FromRole="PRODUCT" ToRole="CHECKOUT" />
+          <NavigationProperty Name="TRANS_STOCK_BARANG" Relationship="Self.FK__TRANS_STO__PROD___2645B050" FromRole="PRODUCT" ToRole="TRANS_STOCK_BARANG" />
+        </EntityType>
+        <EntityType Name="REF_USER">
+          <Key>
+            <PropertyRef Name="REF_USER_ID" />
+          </Key>
+          <Property Name="REF_USER_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_NUMBER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DTM_CRT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DTM_UPD" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CARTs" Relationship="Self.FK__CART__REF_USER_I__5CA1C101" FromRole="REF_USER" ToRole="CART" />
+          <NavigationProperty Name="TRANS_PENJUALAN" Relationship="Self.FK__TRANS_PEN__REF_U__681373AD" FromRole="REF_USER" ToRole="TRANS_PENJUALAN" />
+        </EntityType>
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPPLIER_ID" />
+          </Key>
+          <Property Name="SUPPLIER_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SUPPLIER_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUPPLIER_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TRANS_STOCK_BARANG" Relationship="Self.FK__TRANS_STO__SUPPL__2739D489" FromRole="SUPPLIER" ToRole="TRANS_STOCK_BARANG" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TRANS_BIAYA">
+          <Key>
+            <PropertyRef Name="TRANS_BIAYA_ID" />
+          </Key>
+          <Property Name="TRANS_BIAYA_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRANS_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AMT" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="JURNALs" Relationship="Self.FK__JURNAL__TRANS_BI__73852659" FromRole="TRANS_BIAYA" ToRole="JURNAL" />
+        </EntityType>
+        <EntityType Name="TRANS_HUTANG">
+          <Key>
+            <PropertyRef Name="TRANS_HUTANG_ID" />
+          </Key>
+          <Property Name="TRANS_HUTANG_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLIENT_ID" Type="Int64" />
+          <Property Name="TRANS_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HUTANG_AMT" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="IS_ACTIVE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TANGGAL" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SISA" Type="Decimal" Precision="11" Scale="2" />
+          <NavigationProperty Name="CLIENT" Relationship="Self.FK__TRANS_HUT__CLIEN__2CF2ADDF" FromRole="TRANS_HUTANG" ToRole="CLIENT" />
+          <NavigationProperty Name="JURNALs" Relationship="Self.FK__JURNAL__TRANS_HU__72910220" FromRole="TRANS_HUTANG" ToRole="JURNAL" />
+          <NavigationProperty Name="TRANS_PEMBAYARAN_HUTANG" Relationship="Self.FK__TRANS_PEM__TRANS__2FCF1A8A" FromRole="TRANS_HUTANG" ToRole="TRANS_PEMBAYARAN_HUTANG" />
+        </EntityType>
+        <EntityType Name="TRANS_PEMBAYARAN_HUTANG">
+          <Key>
+            <PropertyRef Name="TRANS_BYR_UTANG_ID" />
+          </Key>
+          <Property Name="TRANS_BYR_UTANG_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRANS_HUTANG_ID" Type="Int64" />
+          <Property Name="TRANS_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TOTAL" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="JURNALs" Relationship="Self.FK__JURNAL__TRANS_BY__74794A92" FromRole="TRANS_PEMBAYARAN_HUTANG" ToRole="JURNAL" />
+          <NavigationProperty Name="TRANS_HUTANG" Relationship="Self.FK__TRANS_PEM__TRANS__2FCF1A8A" FromRole="TRANS_PEMBAYARAN_HUTANG" ToRole="TRANS_HUTANG" />
+        </EntityType>
+        <EntityType Name="TRANS_PENJUALAN">
+          <Key>
+            <PropertyRef Name="TRANS_PENJUALAN_ID" />
+          </Key>
+          <Property Name="TRANS_PENJUALAN_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRANS_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="DateTime" Precision="0" />
+          <Property Name="STATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HARGA_ONGKIR" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="REF_USER_ID" Type="Int64" />
+          <Property Name="ALAMAT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NAMA_PENERIMA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ONGKIR_NAMA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ONGKIR_TYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BUKTI_TRANSAKSI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TANGGAL_TERKIRIM" Type="DateTime" Precision="0" />
+          <Property Name="RESI_PENGIRIMAN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TANGGAL_BAYAR" Type="DateTime" Precision="0" />
+          <Property Name="TANGGAL_TERIMA" Type="DateTime" Precision="0" />
+          <Property Name="PLACE_ID" Type="Int32" />
+          <Property Name="BUKTI_REFUND" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NOTES" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_NUMBER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CHECKOUTs" Relationship="Self.FK__CHECKOUT__TRANS___2F9A1060" FromRole="TRANS_PENJUALAN" ToRole="CHECKOUT" />
+          <NavigationProperty Name="JURNALs" Relationship="Self.FK__JURNAL__TRANS_PE__719CDDE7" FromRole="TRANS_PENJUALAN" ToRole="JURNAL" />
+          <NavigationProperty Name="REF_USER" Relationship="Self.FK__TRANS_PEN__REF_U__681373AD" FromRole="TRANS_PENJUALAN" ToRole="REF_USER" />
+        </EntityType>
+        <EntityType Name="TRANS_STOCK_BARANG">
+          <Key>
+            <PropertyRef Name="TRANS_STOCK_BARANG_ID" />
+          </Key>
+          <Property Name="TRANS_STOCK_BARANG_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRANS_NO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROD_ID" Type="Int64" />
+          <Property Name="SUPPLIER_ID" Type="Int64" />
+          <Property Name="STOCK_AMT" Type="Int32" Nullable="false" />
+          <Property Name="HARGA" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="TANGGAL" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="JURNALs" Relationship="Self.FK__JURNAL__TRANS_ST__756D6ECB" FromRole="TRANS_STOCK_BARANG" ToRole="JURNAL" />
+          <NavigationProperty Name="PRODUCT" Relationship="Self.FK__TRANS_STO__PROD___2645B050" FromRole="TRANS_STOCK_BARANG" ToRole="PRODUCT" />
+          <NavigationProperty Name="SUPPLIER" Relationship="Self.FK__TRANS_STO__SUPPL__2739D489" FromRole="TRANS_STOCK_BARANG" ToRole="SUPPLIER" />
+        </EntityType>
+        <Association Name="FK__CART__PROD_ID__5BAD9CC8">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+          <End Role="CART" Type="Self.CART" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PROD_ID" />
+            </Principal>
+            <Dependent Role="CART">
+              <PropertyRef Name="PROD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CART__REF_USER_I__5CA1C101">
+          <End Role="REF_USER" Type="Self.REF_USER" Multiplicity="1" />
+          <End Role="CART" Type="Self.CART" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REF_USER">
+              <PropertyRef Name="REF_USER_ID" />
+            </Principal>
+            <Dependent Role="CART">
+              <PropertyRef Name="REF_USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PEMBAYARA__CART___0880433F">
+          <End Role="CART" Type="Self.CART" Multiplicity="1" />
+          <End Role="PEMBAYARAN" Type="Self.PEMBAYARAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CART">
+              <PropertyRef Name="CART_ID" />
+            </Principal>
+            <Dependent Role="PEMBAYARAN">
+              <PropertyRef Name="CART_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHECKOUT__PROD_I__2EA5EC27">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="0..1" />
+          <End Role="CHECKOUT" Type="Self.CHECKOUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PROD_ID" />
+            </Principal>
+            <Dependent Role="CHECKOUT">
+              <PropertyRef Name="PROD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHECKOUT__TRANS___2F9A1060">
+          <End Role="TRANS_PENJUALAN" Type="Self.TRANS_PENJUALAN" Multiplicity="0..1" />
+          <End Role="CHECKOUT" Type="Self.CHECKOUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_PENJUALAN">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Principal>
+            <Dependent Role="CHECKOUT">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_HUT__CLIEN__2CF2ADDF">
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="0..1" />
+          <End Role="TRANS_HUTANG" Type="Self.TRANS_HUTANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENT">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="TRANS_HUTANG">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__COA_ID__76619304">
+          <End Role="COA" Type="Self.COA" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COA">
+              <PropertyRef Name="COA_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="COA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_BI__73852659">
+          <End Role="TRANS_BIAYA" Type="Self.TRANS_BIAYA" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_BIAYA">
+              <PropertyRef Name="TRANS_BIAYA_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_BIAYA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_BY__74794A92">
+          <End Role="TRANS_PEMBAYARAN_HUTANG" Type="Self.TRANS_PEMBAYARAN_HUTANG" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_PEMBAYARAN_HUTANG">
+              <PropertyRef Name="TRANS_BYR_UTANG_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_BYR_UTANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_HU__72910220">
+          <End Role="TRANS_HUTANG" Type="Self.TRANS_HUTANG" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_HUTANG">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_PE__719CDDE7">
+          <End Role="TRANS_PENJUALAN" Type="Self.TRANS_PENJUALAN" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_PENJUALAN">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_PENJUALAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JURNAL__TRANS_ST__756D6ECB">
+          <End Role="TRANS_STOCK_BARANG" Type="Self.TRANS_STOCK_BARANG" Multiplicity="0..1" />
+          <End Role="JURNAL" Type="Self.JURNAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_STOCK_BARANG">
+              <PropertyRef Name="TRANS_STOCK_BARANG_ID" />
+            </Principal>
+            <Dependent Role="JURNAL">
+              <PropertyRef Name="TRANS_STOCK_BARANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_STO__PROD___2645B050">
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="0..1" />
+          <End Role="TRANS_STOCK_BARANG" Type="Self.TRANS_STOCK_BARANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCT">
+              <PropertyRef Name="PROD_ID" />
+            </Principal>
+            <Dependent Role="TRANS_STOCK_BARANG">
+              <PropertyRef Name="PROD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_PEN__REF_U__681373AD">
+          <End Role="REF_USER" Type="Self.REF_USER" Multiplicity="0..1" />
+          <End Role="TRANS_PENJUALAN" Type="Self.TRANS_PENJUALAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REF_USER">
+              <PropertyRef Name="REF_USER_ID" />
+            </Principal>
+            <Dependent Role="TRANS_PENJUALAN">
+              <PropertyRef Name="REF_USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_STO__SUPPL__2739D489">
+          <End Role="SUPPLIER" Type="Self.SUPPLIER" Multiplicity="0..1" />
+          <End Role="TRANS_STOCK_BARANG" Type="Self.TRANS_STOCK_BARANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIER">
+              <PropertyRef Name="SUPPLIER_ID" />
+            </Principal>
+            <Dependent Role="TRANS_STOCK_BARANG">
+              <PropertyRef Name="SUPPLIER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TRANS_PEM__TRANS__2FCF1A8A">
+          <End Role="TRANS_HUTANG" Type="Self.TRANS_HUTANG" Multiplicity="0..1" />
+          <End Role="TRANS_PEMBAYARAN_HUTANG" Type="Self.TRANS_PEMBAYARAN_HUTANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANS_HUTANG">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Principal>
+            <Dependent Role="TRANS_PEMBAYARAN_HUTANG">
+              <PropertyRef Name="TRANS_HUTANG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LAISONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CARTs" EntityType="Self.CART" />
+          <EntitySet Name="CHECKOUTs" EntityType="Self.CHECKOUT" />
+          <EntitySet Name="CLIENTs" EntityType="Self.CLIENT" />
+          <EntitySet Name="COAs" EntityType="Self.COA" />
+          <EntitySet Name="JURNALs" EntityType="Self.JURNAL" />
+          <EntitySet Name="PEMBAYARANs" EntityType="Self.PEMBAYARAN" />
+          <EntitySet Name="PLACEs" EntityType="Self.PLACE" />
+          <EntitySet Name="PRODUCTs" EntityType="Self.PRODUCT" />
+          <EntitySet Name="REF_USER" EntityType="Self.REF_USER" />
+          <EntitySet Name="SUPPLIERs" EntityType="Self.SUPPLIER" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TRANS_BIAYA" EntityType="Self.TRANS_BIAYA" />
+          <EntitySet Name="TRANS_HUTANG" EntityType="Self.TRANS_HUTANG" />
+          <EntitySet Name="TRANS_PEMBAYARAN_HUTANG" EntityType="Self.TRANS_PEMBAYARAN_HUTANG" />
+          <EntitySet Name="TRANS_PENJUALAN" EntityType="Self.TRANS_PENJUALAN" />
+          <EntitySet Name="TRANS_STOCK_BARANG" EntityType="Self.TRANS_STOCK_BARANG" />
+          <AssociationSet Name="FK__CART__PROD_ID__5BAD9CC8" Association="Self.FK__CART__PROD_ID__5BAD9CC8">
+            <End Role="PRODUCT" EntitySet="PRODUCTs" />
+            <End Role="CART" EntitySet="CARTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CART__REF_USER_I__5CA1C101" Association="Self.FK__CART__REF_USER_I__5CA1C101">
+            <End Role="REF_USER" EntitySet="REF_USER" />
+            <End Role="CART" EntitySet="CARTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PEMBAYARA__CART___0880433F" Association="Self.FK__PEMBAYARA__CART___0880433F">
+            <End Role="CART" EntitySet="CARTs" />
+            <End Role="PEMBAYARAN" EntitySet="PEMBAYARANs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHECKOUT__PROD_I__2EA5EC27" Association="Self.FK__CHECKOUT__PROD_I__2EA5EC27">
+            <End Role="PRODUCT" EntitySet="PRODUCTs" />
+            <End Role="CHECKOUT" EntitySet="CHECKOUTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHECKOUT__TRANS___2F9A1060" Association="Self.FK__CHECKOUT__TRANS___2F9A1060">
+            <End Role="TRANS_PENJUALAN" EntitySet="TRANS_PENJUALAN" />
+            <End Role="CHECKOUT" EntitySet="CHECKOUTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_HUT__CLIEN__2CF2ADDF" Association="Self.FK__TRANS_HUT__CLIEN__2CF2ADDF">
+            <End Role="CLIENT" EntitySet="CLIENTs" />
+            <End Role="TRANS_HUTANG" EntitySet="TRANS_HUTANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__COA_ID__76619304" Association="Self.FK__JURNAL__COA_ID__76619304">
+            <End Role="COA" EntitySet="COAs" />
+            <End Role="JURNAL" EntitySet="JURNALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_BI__73852659" Association="Self.FK__JURNAL__TRANS_BI__73852659">
+            <End Role="TRANS_BIAYA" EntitySet="TRANS_BIAYA" />
+            <End Role="JURNAL" EntitySet="JURNALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_BY__74794A92" Association="Self.FK__JURNAL__TRANS_BY__74794A92">
+            <End Role="TRANS_PEMBAYARAN_HUTANG" EntitySet="TRANS_PEMBAYARAN_HUTANG" />
+            <End Role="JURNAL" EntitySet="JURNALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_HU__72910220" Association="Self.FK__JURNAL__TRANS_HU__72910220">
+            <End Role="TRANS_HUTANG" EntitySet="TRANS_HUTANG" />
+            <End Role="JURNAL" EntitySet="JURNALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_PE__719CDDE7" Association="Self.FK__JURNAL__TRANS_PE__719CDDE7">
+            <End Role="TRANS_PENJUALAN" EntitySet="TRANS_PENJUALAN" />
+            <End Role="JURNAL" EntitySet="JURNALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JURNAL__TRANS_ST__756D6ECB" Association="Self.FK__JURNAL__TRANS_ST__756D6ECB">
+            <End Role="TRANS_STOCK_BARANG" EntitySet="TRANS_STOCK_BARANG" />
+            <End Role="JURNAL" EntitySet="JURNALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_STO__PROD___2645B050" Association="Self.FK__TRANS_STO__PROD___2645B050">
+            <End Role="PRODUCT" EntitySet="PRODUCTs" />
+            <End Role="TRANS_STOCK_BARANG" EntitySet="TRANS_STOCK_BARANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_PEN__REF_U__681373AD" Association="Self.FK__TRANS_PEN__REF_U__681373AD">
+            <End Role="REF_USER" EntitySet="REF_USER" />
+            <End Role="TRANS_PENJUALAN" EntitySet="TRANS_PENJUALAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_STO__SUPPL__2739D489" Association="Self.FK__TRANS_STO__SUPPL__2739D489">
+            <End Role="SUPPLIER" EntitySet="SUPPLIERs" />
+            <End Role="TRANS_STOCK_BARANG" EntitySet="TRANS_STOCK_BARANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TRANS_PEM__TRANS__2FCF1A8A" Association="Self.FK__TRANS_PEM__TRANS__2FCF1A8A">
+            <End Role="TRANS_HUTANG" EntitySet="TRANS_HUTANG" />
+            <End Role="TRANS_PEMBAYARAN_HUTANG" EntitySet="TRANS_PEMBAYARAN_HUTANG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LAISONModelStoreContainer" CdmEntityContainer="LAISONEntities">
+          <EntitySetMapping Name="CARTs">
+            <EntityTypeMapping TypeName="LAISONModel.CART">
+              <MappingFragment StoreEntitySet="CART">
+                <ScalarProperty Name="CART_ID" ColumnName="CART_ID" />
+                <ScalarProperty Name="REF_USER_ID" ColumnName="REF_USER_ID" />
+                <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+                <ScalarProperty Name="AMMOUNT" ColumnName="AMMOUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHECKOUTs">
+            <EntityTypeMapping TypeName="LAISONModel.CHECKOUT">
+              <MappingFragment StoreEntitySet="CHECKOUT">
+                <ScalarProperty Name="CHECKOUT_ID" ColumnName="CHECKOUT_ID" />
+                <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+                <ScalarProperty Name="TRANS_PENJUALAN_ID" ColumnName="TRANS_PENJUALAN_ID" />
+                <ScalarProperty Name="JUMLAH_BARANG" ColumnName="JUMLAH_BARANG" />
+                <ScalarProperty Name="HARGA_PRODUK" ColumnName="HARGA_PRODUK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTs">
+            <EntityTypeMapping TypeName="LAISONModel.CLIENT">
+              <MappingFragment StoreEntitySet="CLIENT">
+                <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+                <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+                <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COAs">
+            <EntityTypeMapping TypeName="LAISONModel.COA">
+              <MappingFragment StoreEntitySet="COA">
+                <ScalarProperty Name="COA_ID" ColumnName="COA_ID" />
+                <ScalarProperty Name="COA_NO" ColumnName="COA_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JURNALs">
+            <EntityTypeMapping TypeName="LAISONModel.JURNAL">
+              <MappingFragment StoreEntitySet="JURNAL">
+                <ScalarProperty Name="JURNAL_ID" ColumnName="JURNAL_ID" />
+                <ScalarProperty Name="TRANS_PENJUALAN_ID" ColumnName="TRANS_PENJUALAN_ID" />
+                <ScalarProperty Name="TRANS_HUTANG_ID" ColumnName="TRANS_HUTANG_ID" />
+                <ScalarProperty Name="TRANS_BIAYA_ID" ColumnName="TRANS_BIAYA_ID" />
+                <ScalarProperty Name="TRANS_BYR_UTANG_ID" ColumnName="TRANS_BYR_UTANG_ID" />
+                <ScalarProperty Name="TRANS_STOCK_BARANG_ID" ColumnName="TRANS_STOCK_BARANG_ID" />
+                <ScalarProperty Name="COA_ID" ColumnName="COA_ID" />
+                <ScalarProperty Name="IN_AMT" ColumnName="IN_AMT" />
+                <ScalarProperty Name="OUT_AMT" ColumnName="OUT_AMT" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEMBAYARANs">
+            <EntityTypeMapping TypeName="LAISONModel.PEMBAYARAN">
+              <MappingFragment StoreEntitySet="PEMBAYARAN">
+                <ScalarProperty Name="pembayaran_id" ColumnName="pembayaran_id" />
+                <ScalarProperty Name="CART_ID" ColumnName="CART_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PLACEs">
+            <EntityTypeMapping TypeName="LAISONModel.PLACE">
+              <MappingFragment StoreEntitySet="PLACE">
+                <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
+                <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+                <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTs">
+            <EntityTypeMapping TypeName="LAISONModel.PRODUCT">
+              <MappingFragment StoreEntitySet="PRODUCT">
+                <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+                <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+                <ScalarProperty Name="PROD_NO" ColumnName="PROD_NO" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="STOCK_TOTAL" ColumnName="STOCK_TOTAL" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+                <ScalarProperty Name="BERAT_PRODUK" ColumnName="BERAT_PRODUK" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REF_USER">
+            <EntityTypeMapping TypeName="LAISONModel.REF_USER">
+              <MappingFragment StoreEntitySet="REF_USER">
+                <ScalarProperty Name="REF_USER_ID" ColumnName="REF_USER_ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+                <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+                <ScalarProperty Name="DTM_CRT" ColumnName="DTM_CRT" />
+                <ScalarProperty Name="DTM_UPD" ColumnName="DTM_UPD" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUPPLIERs">
+            <EntityTypeMapping TypeName="LAISONModel.SUPPLIER">
+              <MappingFragment StoreEntitySet="SUPPLIER">
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="SUPPLIER_NO" ColumnName="SUPPLIER_NO" />
+                <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LAISONModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_BIAYA">
+            <EntityTypeMapping TypeName="LAISONModel.TRANS_BIAYA">
+              <MappingFragment StoreEntitySet="TRANS_BIAYA">
+                <ScalarProperty Name="TRANS_BIAYA_ID" ColumnName="TRANS_BIAYA_ID" />
+                <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="AMT" ColumnName="AMT" />
+                <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_HUTANG">
+            <EntityTypeMapping TypeName="LAISONModel.TRANS_HUTANG">
+              <MappingFragment StoreEntitySet="TRANS_HUTANG">
+                <ScalarProperty Name="TRANS_HUTANG_ID" ColumnName="TRANS_HUTANG_ID" />
+                <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+                <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+                <ScalarProperty Name="HUTANG_AMT" ColumnName="HUTANG_AMT" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+                <ScalarProperty Name="SISA" ColumnName="SISA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_PEMBAYARAN_HUTANG">
+            <EntityTypeMapping TypeName="LAISONModel.TRANS_PEMBAYARAN_HUTANG">
+              <MappingFragment StoreEntitySet="TRANS_PEMBAYARAN_HUTANG">
+                <ScalarProperty Name="TRANS_BYR_UTANG_ID" ColumnName="TRANS_BYR_UTANG_ID" />
+                <ScalarProperty Name="TRANS_HUTANG_ID" ColumnName="TRANS_HUTANG_ID" />
+                <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_PENJUALAN">
+            <EntityTypeMapping TypeName="LAISONModel.TRANS_PENJUALAN">
+              <MappingFragment StoreEntitySet="TRANS_PENJUALAN">
+                <ScalarProperty Name="TRANS_PENJUALAN_ID" ColumnName="TRANS_PENJUALAN_ID" />
+                <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="HARGA_ONGKIR" ColumnName="HARGA_ONGKIR" />
+                <ScalarProperty Name="REF_USER_ID" ColumnName="REF_USER_ID" />
+                <ScalarProperty Name="ALAMAT" ColumnName="ALAMAT" />
+                <ScalarProperty Name="NAMA_PENERIMA" ColumnName="NAMA_PENERIMA" />
+                <ScalarProperty Name="ONGKIR_NAMA" ColumnName="ONGKIR_NAMA" />
+                <ScalarProperty Name="ONGKIR_TYPE" ColumnName="ONGKIR_TYPE" />
+                <ScalarProperty Name="BUKTI_TRANSAKSI" ColumnName="BUKTI_TRANSAKSI" />
+                <ScalarProperty Name="TANGGAL_TERKIRIM" ColumnName="TANGGAL_TERKIRIM" />
+                <ScalarProperty Name="RESI_PENGIRIMAN" ColumnName="RESI_PENGIRIMAN" />
+                <ScalarProperty Name="TANGGAL_BAYAR" ColumnName="TANGGAL_BAYAR" />
+                <ScalarProperty Name="TANGGAL_TERIMA" ColumnName="TANGGAL_TERIMA" />
+                <ScalarProperty Name="PLACE_ID" ColumnName="PLACE_ID" />
+                <ScalarProperty Name="BUKTI_REFUND" ColumnName="BUKTI_REFUND" />
+                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+                <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANS_STOCK_BARANG">
+            <EntityTypeMapping TypeName="LAISONModel.TRANS_STOCK_BARANG">
+              <MappingFragment StoreEntitySet="TRANS_STOCK_BARANG">
+                <ScalarProperty Name="TRANS_STOCK_BARANG_ID" ColumnName="TRANS_STOCK_BARANG_ID" />
+                <ScalarProperty Name="TRANS_NO" ColumnName="TRANS_NO" />
+                <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+                <ScalarProperty Name="SUPPLIER_ID" ColumnName="SUPPLIER_ID" />
+                <ScalarProperty Name="STOCK_AMT" ColumnName="STOCK_AMT" />
+                <ScalarProperty Name="HARGA" ColumnName="HARGA" />
+                <ScalarProperty Name="TANGGAL" ColumnName="TANGGAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\SkripsiIanKeefe.dll
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\SkripsiIanKeefe.pdb
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.dll
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.pdb
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\EntityFramework.dll
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\EntityFramework.xml
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\Newtonsoft.Json.dll
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\RestSharp.dll
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\Newtonsoft.Json.xml
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\RestSharp.xml
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\SkripsiIanKeefe.dll.config
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.csproj.CoreCompileInputs.cache
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.csproj.CopyComplete
+C:\Users\ian.keefe\Documents\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.csprojAssemblyReference.cache
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\SkripsiIanKeefe.dll.config
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\SkripsiIanKeefe.dll
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\SkripsiIanKeefe.pdb
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\EntityFramework.dll
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\Newtonsoft.Json.dll
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\RestSharp.dll
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\EntityFramework.xml
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\Newtonsoft.Json.xml
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\bin\RestSharp.xml
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.csproj.CoreCompileInputs.cache
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.csproj.CopyComplete
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.dll
+C:\Users\ian.keefe\Documents\backup aplikasi\Aplikasi Srkipsi Ian\SkripsiIanKeefe\SkripsiIanKeefe\obj\Debug\SkripsiIanKeefe.pdb

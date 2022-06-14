@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CA6DCF8-DADB-4F34-B203-900230C4F9A9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SkripsiIanKeefe</RootNamespace>
+    <AssemblyName>SkripsiIanKeefe</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.13.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.13.0\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddBiaya.aspx" />
+    <Content Include="AddClient.aspx" />
+    <Content Include="AddHutang.aspx" />
+    <Content Include="AddPembayaranHutang.aspx" />
+    <Content Include="AddProduct.aspx" />
+    <Content Include="AddStokBarang.aspx" />
+    <Content Include="AddSupplier.aspx" />
+    <Content Include="ApproveRefund.aspx" />
+    <Content Include="assets\demo\chart-area-demo.js" />
+    <Content Include="assets\demo\chart-bar-demo.js" />
+    <Content Include="assets\demo\chart-pie-demo.js" />
+    <Content Include="assets\demo\datatables-demo.js" />
+    <Content Include="assets\img\error-404-monochrome.svg" />
+    <Content Include="BiayaPagingAdmin.aspx" />
+    <Content Include="bin\SkripsiIanKeefe.dll" />
+    <Content Include="bin\SkripsiIanKeefe.pdb" />
+    <Content Include="BuktiApprovalPengiriman.aspx" />
+    <Content Include="BuktiPembayaran.aspx" />
+    <Content Include="Cart.aspx" />
+    <Content Include="CheckoutPembayaran.aspx" />
+    <Content Include="ClientPagingAdmin.aspx" />
+    <Content Include="css\styles.css" />
+    <Content Include="CustomerPagingAdmin.aspx" />
+    <Content Include="DetailBeban.aspx" />
+    <Content Include="DetailHutang.aspx" />
+    <Content Include="DetailPembayaranHutang.aspx" />
+    <Content Include="DetailPembelianStok.aspx" />
+    <Content Include="DetailPenjualanAdmin.aspx" />
+    <Content Include="DetailPenjualanCust.aspx" />
+    <Content Include="DetailProdCust.aspx" />
+    <Content Include="DetailProduct.aspx" />
+    <Content Include="EditBiaya.aspx" />
+    <Content Include="EditClient.aspx" />
+    <Content Include="EditHutang.aspx" />
+    <Content Include="EditPembayaranHutang.aspx" />
+    <Content Include="EditProduct.aspx" />
+    <Content Include="EditStok.aspx" />
+    <Content Include="EditSupplier.aspx" />
+    <Content Include="Entities\LAISONEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LAISONEntities.edmx</DependentUpon>
+      <LastGenOutput>LAISONEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\LAISONEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LAISONEntities.edmx</DependentUpon>
+      <LastGenOutput>LAISONEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="HistoryTransaksi.aspx" />
+    <Content Include="HomeCustomer.aspx" />
+    <Content Include="HutangPagingAdmin.aspx" />
+    <Content Include="Image\edit.png" />
+    <Content Include="Image\notification.png" />
+    <Content Include="Image\Pembayaran.png" />
+    <Content Include="Image\trash.png" />
+    <Content Include="index.html" />
+    <Content Include="js\datatables-simple-demo.js" />
+    <Content Include="js\scripts.js" />
+    <Content Include="JurnalPaging.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Main.aspx" />
+    <Content Include="PagingApproveCancelTransaksi.aspx" />
+    <Content Include="PagingApprovePembayaranAdmin.aspx" />
+    <Content Include="PagingApproveRefundTransaksi.aspx" />
+    <Content Include="PagingCancelTransaksi.aspx" />
+    <Content Include="PagingPembayaranProduk.aspx" />
+    <Content Include="PagingPenerimaanProduk.aspx" />
+    <Content Include="PagingPengirimanAdmin.aspx" />
+    <Content Include="PagingReqCancelTransaksiCustomer.aspx" />
+    <Content Include="PagingRequestCancelTransaksi.aspx" />
+    <Content Include="PembayaranHutangPagingAdmin.aspx" />
+    <Content Include="PembelianStockBarangPagingAdmin.aspx" />
+    <Content Include="PenjualanOnProgressAdmin.aspx" />
+    <Content Include="PenjualanPagingAdmin.aspx" />
+    <Content Include="PrediksiStokBarang.aspx" />
+    <Content Include="ProductPagingAdmin.aspx" />
+    <Content Include="RefundCustomer.aspx" />
+    <Content Include="RefundUploadBukti.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="SettingCust.aspx" />
+    <Content Include="SuccessPembayaran.aspx" />
+    <Content Include="SupplierPagingAdmin.aspx" />
+    <Content Include="Upload\14d0b8470e3348edbdbce664fe1a2652.jpg" />
+    <Content Include="Upload\17-11-2021 10-47-22.png" />
+    <Content Include="Upload\20211107_230251.jpg" />
+    <Content Include="Upload\23014c772aff80d65c1deb7359995acf.jpg" />
+    <Content Include="Upload\2af256420e5488eb95fe206533bd9ff1.jpg" />
+    <Content Include="Upload\7231af93-b6dd-414b-ad23-5196200c3d12.jpg" />
+    <Content Include="Upload\8cb0c30408cf1528e576358ffc7c1942.jpg" />
+    <Content Include="Upload\8e6abc80848e07218f3ac9d39010d757.jpg" />
+    <Content Include="Upload\9779617_34c9844d-885d-47fe-adcf-a5f868cc3df6_700_700.jpg" />
+    <Content Include="Upload\currency+dollar+money+icon-1320195548001449382_512.png" />
+    <Content Include="Upload\e2269084b018b1822fbfdb48765de845.jpg" />
+    <Content Include="Upload\efe5f5f6e93ee137055ad7abef78b728.jpg" />
+    <Content Include="Upload\Halaman Reschedule .png" />
+    <Content Include="Upload\messageImage_1634277265785.jpeg" />
+    <Content Include="Upload\MicrosoftTeams-image %2832%29.png" />
+    <Content Include="Upload\MicrosoftTeams-image %2833%29.png" />
+    <Content Include="Upload\tanda tangan.jpg" />
+    <Content Include="Upload\waterfall-ian.jpg" />
+    <Content Include="Upload\WhatsApp Image 2021-11-17 at 16.41.59.jpeg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddBiaya.aspx.cs">
+      <DependentUpon>AddBiaya.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddBiaya.aspx.designer.cs">
+      <DependentUpon>AddBiaya.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddClient.aspx.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddClient.aspx.designer.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddHutang.aspx.cs">
+      <DependentUpon>AddHutang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddHutang.aspx.designer.cs">
+      <DependentUpon>AddHutang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPembayaranHutang.aspx.cs">
+      <DependentUpon>AddPembayaranHutang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPembayaranHutang.aspx.designer.cs">
+      <DependentUpon>AddPembayaranHutang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddStokBarang.aspx.cs">
+      <DependentUpon>AddStokBarang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddStokBarang.aspx.designer.cs">
+      <DependentUpon>AddStokBarang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSupplier.aspx.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSupplier.aspx.designer.cs">
+      <DependentUpon>AddSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Ongkir.cs" />
+    <Compile Include="ApproveRefund.aspx.cs">
+      <DependentUpon>ApproveRefund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApproveRefund.aspx.designer.cs">
+      <DependentUpon>ApproveRefund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BiayaPagingAdmin.aspx.cs">
+      <DependentUpon>BiayaPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BiayaPagingAdmin.aspx.designer.cs">
+      <DependentUpon>BiayaPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuktiApprovalPengiriman.aspx.cs">
+      <DependentUpon>BuktiApprovalPengiriman.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuktiApprovalPengiriman.aspx.designer.cs">
+      <DependentUpon>BuktiApprovalPengiriman.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BuktiPembayaran.aspx.cs">
+      <DependentUpon>BuktiPembayaran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuktiPembayaran.aspx.designer.cs">
+      <DependentUpon>BuktiPembayaran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutPembayaran.aspx.cs">
+      <DependentUpon>CheckoutPembayaran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutPembayaran.aspx.designer.cs">
+      <DependentUpon>CheckoutPembayaran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPagingAdmin.aspx.cs">
+      <DependentUpon>ClientPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientPagingAdmin.aspx.designer.cs">
+      <DependentUpon>ClientPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPagingAdmin.aspx.cs">
+      <DependentUpon>CustomerPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPagingAdmin.aspx.designer.cs">
+      <DependentUpon>CustomerPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailBeban.aspx.cs">
+      <DependentUpon>DetailBeban.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailBeban.aspx.designer.cs">
+      <DependentUpon>DetailBeban.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailHutang.aspx.cs">
+      <DependentUpon>DetailHutang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailHutang.aspx.designer.cs">
+      <DependentUpon>DetailHutang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailPembayaranHutang.aspx.cs">
+      <DependentUpon>DetailPembayaranHutang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailPembayaranHutang.aspx.designer.cs">
+      <DependentUpon>DetailPembayaranHutang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailPembelianStok.aspx.cs">
+      <DependentUpon>DetailPembelianStok.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailPembelianStok.aspx.designer.cs">
+      <DependentUpon>DetailPembelianStok.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailPenjualanAdmin.aspx.cs">
+      <DependentUpon>DetailPenjualanAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailPenjualanAdmin.aspx.designer.cs">
+      <DependentUpon>DetailPenjualanAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailPenjualanCust.aspx.cs">
+      <DependentUpon>DetailPenjualanCust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailPenjualanCust.aspx.designer.cs">
+      <DependentUpon>DetailPenjualanCust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailProdCust.aspx.cs">
+      <DependentUpon>DetailProdCust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailProdCust.aspx.designer.cs">
+      <DependentUpon>DetailProdCust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailProduct.aspx.cs">
+      <DependentUpon>DetailProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailProduct.aspx.designer.cs">
+      <DependentUpon>DetailProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditBiaya.aspx.cs">
+      <DependentUpon>EditBiaya.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditBiaya.aspx.designer.cs">
+      <DependentUpon>EditBiaya.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditClient.aspx.cs">
+      <DependentUpon>EditClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditClient.aspx.designer.cs">
+      <DependentUpon>EditClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditHutang.aspx.cs">
+      <DependentUpon>EditHutang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditHutang.aspx.designer.cs">
+      <DependentUpon>EditHutang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPembayaranHutang.aspx.cs">
+      <DependentUpon>EditPembayaranHutang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPembayaranHutang.aspx.designer.cs">
+      <DependentUpon>EditPembayaranHutang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditStok.aspx.cs">
+      <DependentUpon>EditStok.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStok.aspx.designer.cs">
+      <DependentUpon>EditStok.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditSupplier.aspx.cs">
+      <DependentUpon>EditSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditSupplier.aspx.designer.cs">
+      <DependentUpon>EditSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CART.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CHECKOUT.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CLIENT.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\COA.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\JURNAL.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\LAISONEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LAISONEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\LAISONEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\LAISONEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LAISONEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PEMBAYARAN.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PLACE.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PRODUCT.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\REF_USER.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SUPPLIER.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sysdiagram.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TRANS_BIAYA.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TRANS_HUTANG.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TRANS_PEMBAYARAN_HUTANG.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TRANS_PENJUALAN.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TRANS_STOCK_BARANG.cs">
+      <DependentUpon>LAISONEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryTransaksi.aspx.cs">
+      <DependentUpon>HistoryTransaksi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistoryTransaksi.aspx.designer.cs">
+      <DependentUpon>HistoryTransaksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeCustomer.aspx.cs">
+      <DependentUpon>HomeCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeCustomer.aspx.designer.cs">
+      <DependentUpon>HomeCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HutangPagingAdmin.aspx.cs">
+      <DependentUpon>HutangPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HutangPagingAdmin.aspx.designer.cs">
+      <DependentUpon>HutangPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JurnalPaging.aspx.cs">
+      <DependentUpon>JurnalPaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JurnalPaging.aspx.designer.cs">
+      <DependentUpon>JurnalPaging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MainCustomer.Master.cs">
+      <DependentUpon>MainCustomer.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainCustomer.Master.designer.cs">
+      <DependentUpon>MainCustomer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="PagingApproveCancelTransaksi.aspx.cs">
+      <DependentUpon>PagingApproveCancelTransaksi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingApproveCancelTransaksi.aspx.designer.cs">
+      <DependentUpon>PagingApproveCancelTransaksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingApprovePembayaranAdmin.aspx.cs">
+      <DependentUpon>PagingApprovePembayaranAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingApprovePembayaranAdmin.aspx.designer.cs">
+      <DependentUpon>PagingApprovePembayaranAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingApproveRefundTransaksi.aspx.cs">
+      <DependentUpon>PagingApproveRefundTransaksi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingApproveRefundTransaksi.aspx.designer.cs">
+      <DependentUpon>PagingApproveRefundTransaksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingCancelTransaksi.aspx.cs">
+      <DependentUpon>PagingCancelTransaksi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingCancelTransaksi.aspx.designer.cs">
+      <DependentUpon>PagingCancelTransaksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingPembayaranProduk.aspx.cs">
+      <DependentUpon>PagingPembayaranProduk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingPembayaranProduk.aspx.designer.cs">
+      <DependentUpon>PagingPembayaranProduk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingPenerimaanProduk.aspx.cs">
+      <DependentUpon>PagingPenerimaanProduk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingPenerimaanProduk.aspx.designer.cs">
+      <DependentUpon>PagingPenerimaanProduk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingPengirimanAdmin.aspx.cs">
+      <DependentUpon>PagingPengirimanAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingPengirimanAdmin.aspx.designer.cs">
+      <DependentUpon>PagingPengirimanAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingReqCancelTransaksiCustomer.aspx.cs">
+      <DependentUpon>PagingReqCancelTransaksiCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingReqCancelTransaksiCustomer.aspx.designer.cs">
+      <DependentUpon>PagingReqCancelTransaksiCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagingRequestCancelTransaksi.aspx.cs">
+      <DependentUpon>PagingRequestCancelTransaksi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagingRequestCancelTransaksi.aspx.designer.cs">
+      <DependentUpon>PagingRequestCancelTransaksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PembayaranHutangPagingAdmin.aspx.cs">
+      <DependentUpon>PembayaranHutangPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PembayaranHutangPagingAdmin.aspx.designer.cs">
+      <DependentUpon>PembayaranHutangPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PembelianStockBarangPagingAdmin.aspx.cs">
+      <DependentUpon>PembelianStockBarangPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PembelianStockBarangPagingAdmin.aspx.designer.cs">
+      <DependentUpon>PembelianStockBarangPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PenjualanOnProgressAdmin.aspx.cs">
+      <DependentUpon>PenjualanOnProgressAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenjualanOnProgressAdmin.aspx.designer.cs">
+      <DependentUpon>PenjualanOnProgressAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PenjualanPagingAdmin.aspx.cs">
+      <DependentUpon>PenjualanPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenjualanPagingAdmin.aspx.designer.cs">
+      <DependentUpon>PenjualanPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrediksiStokBarang.aspx.cs">
+      <DependentUpon>PrediksiStokBarang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrediksiStokBarang.aspx.designer.cs">
+      <DependentUpon>PrediksiStokBarang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPagingAdmin.aspx.cs">
+      <DependentUpon>ProductPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductPagingAdmin.aspx.designer.cs">
+      <DependentUpon>ProductPagingAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefundCustomer.aspx.cs">
+      <DependentUpon>RefundCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RefundCustomer.aspx.designer.cs">
+      <DependentUpon>RefundCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RefundUploadBukti.aspx.cs">
+      <DependentUpon>RefundUploadBukti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RefundUploadBukti.aspx.designer.cs">
+      <DependentUpon>RefundUploadBukti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingCust.aspx.cs">
+      <DependentUpon>SettingCust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SettingCust.aspx.designer.cs">
+      <DependentUpon>SettingCust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessPembayaran.aspx.cs">
+      <DependentUpon>SuccessPembayaran.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessPembayaran.aspx.designer.cs">
+      <DependentUpon>SuccessPembayaran.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierPagingAdmin.aspx.cs">
+      <DependentUpon>SupplierPagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierPagingAdmin.aspx.designer.cs">
+      <DependentUpon>SupplierPagingAdmin.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Main.Master" />
+    <Content Include="packages.config" />
+    <Content Include="MainCustomer.Master" />
+    <EntityDeploy Include="Entities\LAISONEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LAISONEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\LAISONEntities.edmx.diagram">
+      <DependentUpon>LAISONEntities.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49729/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

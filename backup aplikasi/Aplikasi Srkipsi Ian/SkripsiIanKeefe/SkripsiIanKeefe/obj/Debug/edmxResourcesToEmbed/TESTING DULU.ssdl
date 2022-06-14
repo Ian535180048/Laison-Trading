@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LAISONModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LAISONModelStoreContainer">
+    <EntitySet Name="HALO" EntityType="LAISONModel.Store.HALO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SIP" EntityType="LAISONModel.Store.SIP" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__SIP__TEST__74AE54BC" Association="LAISONModel.Store.FK__SIP__TEST__74AE54BC">
+      <End Role="HALO" EntitySet="HALO" />
+      <End Role="SIP" EntitySet="SIP" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HALO">
+    <Key>
+      <PropertyRef Name="TEST" />
+    </Key>
+    <Property Name="TEST" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SIP">
+    <Key>
+      <PropertyRef Name="TESTO" />
+    </Key>
+    <Property Name="TESTO" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TEST" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__SIP__TEST__74AE54BC">
+    <End Role="HALO" Type="LAISONModel.Store.HALO" Multiplicity="1" />
+    <End Role="SIP" Type="LAISONModel.Store.SIP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HALO">
+        <PropertyRef Name="TEST" />
+      </Principal>
+      <Dependent Role="SIP">
+        <PropertyRef Name="TEST" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

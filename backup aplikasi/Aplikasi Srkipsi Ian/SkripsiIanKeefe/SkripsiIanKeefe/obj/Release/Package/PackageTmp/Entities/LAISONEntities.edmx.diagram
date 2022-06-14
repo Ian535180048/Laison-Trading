@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="da6b25d0ba4440a7a53652a1828bd1d1" Name="Diagram1">
+        <EntityTypeShape EntityType="LAISONModel.CART" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.CHECKOUT" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.CLIENT" Width="1.5" PointX="1.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.COA" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.JURNAL" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.PEMBAYARAN" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.PLACE" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.PRODUCT" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.REF_USER" Width="1.5" PointX="0.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.SUPPLIER" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.sysdiagram" Width="1.5" PointX="8.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.TRANS_BIAYA" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.TRANS_HUTANG" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.TRANS_PEMBAYARAN_HUTANG" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.TRANS_PENJUALAN" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LAISONModel.TRANS_STOCK_BARANG" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="LAISONModel.FK__CART__PROD_ID__5BAD9CC8" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__CART__REF_USER_I__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__PEMBAYARA__CART___0880433F" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__CHECKOUT__PROD_I__2EA5EC27" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__CHECKOUT__TRANS___2F9A1060" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__TRANS_HUT__CLIEN__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__JURNAL__COA_ID__76619304" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__JURNAL__TRANS_BI__73852659" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__JURNAL__TRANS_BY__74794A92" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__JURNAL__TRANS_HU__72910220" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__JURNAL__TRANS_PE__719CDDE7" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__JURNAL__TRANS_ST__756D6ECB" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__TRANS_STO__PROD___2645B050" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__TRANS_PEN__REF_U__681373AD" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__TRANS_STO__SUPPL__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="LAISONModel.FK__TRANS_PEM__TRANS__2FCF1A8A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
